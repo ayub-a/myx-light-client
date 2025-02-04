@@ -1,22 +1,40 @@
 import { RuleSetRule } from 'webpack'
+import { BuildConfig } from './types'
 
-export function buildLoaders(): RuleSetRule[] {
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+
+export function buildLoaders({ isDev }: BuildConfig): RuleSetRule[] {
+	const cssLoader = {
+		test: /\.scss$/i,
+		use: [
+			isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+			{
+				loader: 'css-loader',
+				options: {
+					modules: {
+						auto: /\.module\.scss/,
+						localIdentName: isDev ? '[path][name]__[local]--[hash:base64:5]' : '[hash:base64:5]',
+						namedExport: false,
+					},
+				},
+			},
+			'sass-loader',
+		],
+	}
+
 	const babelLoader = {
-		test: /\.(js|ts)$/,
+		test: /\.(ts|tsx)$/,
 		exclude: /node_modules/,
 		use: {
 			loader: 'babel-loader',
-			options: {
-				presets: ['@babel/preset-env'],
-			},
 		},
 	}
 
 	const tsLoader = {
-		test: /\.ts$/,
-		exclude: /node_modules/,
+		test: /\.tsx$/,
 		use: 'ts-loader',
+		exclude: /node_modules/,
 	}
 
-	return [babelLoader, tsLoader]
+	return [babelLoader, tsLoader, cssLoader]
 }

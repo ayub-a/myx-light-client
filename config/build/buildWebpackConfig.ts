@@ -23,7 +23,7 @@ export function buildWebpackConfig(config: BuildConfig): Configuration {
 		plugins: buildPlugins(config),
 
 		module: {
-			rules: buildLoaders(),
+			rules: buildLoaders(config),
 		},
 
 		resolve: buildResolvers(config),
