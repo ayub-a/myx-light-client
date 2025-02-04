@@ -3,9 +3,9 @@
 	"version": "1.0.0",
 	"main": "index.js",
 	"scripts": {
-		"build:prod": "webpack -- --mode production",
-		"build:dev": "webpack -- --mode development",
-		"start": "webpack serve"
+		"build:prod": "webpack --env mode=production",
+		"build:dev": "webpack --env mode=development",
+		"start": "webpack serve --env port=3000"
 	},
 	"author": "",
 	"license": "ISC",
