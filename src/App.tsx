@@ -5,6 +5,7 @@ import { MainLazy } from './pages/Main/Main.lazy'
 import { ContactLazy } from './pages/Contact/Contact.lazy'
 import { AboutLazy } from './pages/About/About.lazy'
 import { useTheme } from './theme/useTheme'
+import { clsnm } from './lib/classNames'
 
 import './styles/index.scss'
 
@@ -12,7 +13,7 @@ export const App = () => {
 	const { theme, toggleTheme } = useTheme()
 
 	return (
-		<div className={`App theme_${theme}`}>
+		<div className={clsnm('App', [`theme_${theme}`])}>
 			<div className='nav'>
 				<Link to='/'>main</Link>
 				<Link to='/contact'>contact</Link>
