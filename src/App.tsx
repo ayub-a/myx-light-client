@@ -4,17 +4,22 @@ import { Link, Route, Routes } from 'react-router-dom'
 import { MainLazy } from './pages/Main/Main.lazy'
 import { ContactLazy } from './pages/Contact/Contact.lazy'
 import { AboutLazy } from './pages/About/About.lazy'
+import { useTheme } from './theme/useTheme'
 
-import './index.scss'
+import './styles/index.scss'
 
 export const App = () => {
+	const { theme, toggleTheme } = useTheme()
+
 	return (
-		<div className='App'>
+		<div className={`App theme_${theme}`}>
 			<div className='nav'>
 				<Link to='/'>main</Link>
 				<Link to='/contact'>contact</Link>
 				<Link to='/about'>about</Link>
 			</div>
+
+			<button onClick={toggleTheme}>Theme: {theme}</button>
 
 			<Suspense fallback={'Loding..'}>
 				<Routes>
