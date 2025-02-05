@@ -1,13 +1,10 @@
 import { Configuration as DevServerConfiguration } from 'webpack-dev-server'
 import { BuildConfig } from './types'
 
-export function buildDevServer({ port, paths }: BuildConfig): DevServerConfiguration {
+export function buildDevServer({ port }: BuildConfig): DevServerConfiguration {
 	return {
-		static: {
-			directory: paths.output,
-		},
-		port,
+		historyApiFallback: true,
 		hot: true,
-		open: false,
+		port,
 	}
 }
