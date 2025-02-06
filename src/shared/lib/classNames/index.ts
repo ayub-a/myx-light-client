@@ -1,0 +1,1 @@
+export { clsnm } from './classNames'

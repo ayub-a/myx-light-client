@@ -1,11 +1,12 @@
 import { Suspense } from 'react'
 import { Link, Route, Routes } from 'react-router-dom'
 
-import { MainLazy } from './pages/Main/Main.lazy'
-import { ContactLazy } from './pages/Contact/Contact.lazy'
-import { AboutLazy } from './pages/About/About.lazy'
-import { useTheme } from './theme/useTheme'
-import { clsnm } from './lib/classNames'
+import { useTheme } from 'shared/lib/theme'
+import { clsnm } from 'shared/lib/classNames'
+
+import { MainLazy } from 'pages/Main/Main.lazy'
+import { ContactLazy } from 'pages/Contact/Contact.lazy'
+import { AboutLazy } from 'pages/About/About.lazy'
 
 import './styles/index.scss'
 

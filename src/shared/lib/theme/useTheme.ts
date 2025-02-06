@@ -1,6 +1,8 @@
 import { useContext } from 'react'
-import { LOCAL_STORAGE_THEME_KEY } from '../../src/const/localStorage'
-import { Theme, ThemeContext } from './ThemeContext'
+
+import { ThemeContext } from './ThemeContext'
+import { Theme } from './types'
+import { LOCAL_STORAGE_THEME_KEY } from '../../const/localStorage'
 
 interface ThemeHookReturn {
 	theme: Theme
