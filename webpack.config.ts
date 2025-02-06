@@ -4,6 +4,7 @@ import { buildWebpackConfig } from './config/build'
 import { BuildEnv, BuildPaths } from './config/build/types'
 
 export default (env: BuildEnv): Configuration => {
+	const analyzer = env.analyzer
 	const mode = env.mode || 'development'
 	const isDev = mode === 'development'
 	const port = env.port || 3000
@@ -20,5 +21,6 @@ export default (env: BuildEnv): Configuration => {
 		isDev,
 		port,
 		mode,
+		analyzer,
 	})
 }

@@ -1,6 +1,7 @@
 export type ModeOptions = 'production' | 'development'
 
 export interface BuildEnv {
+	analyzer: boolean
 	mode: ModeOptions
 	port: number
 }
@@ -17,4 +18,5 @@ export interface BuildConfig {
 	isDev: boolean
 	mode: ModeOptions
 	port: number
+	analyzer: boolean
 }

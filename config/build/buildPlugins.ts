@@ -5,7 +5,7 @@ import { BuildConfig } from './types'
 
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 
-export function buildPlugins({ paths, isDev }: BuildConfig): WebpackPluginInstance[] {
+export function buildPlugins({ paths, analyzer }: BuildConfig): WebpackPluginInstance[] {
 	return [
 		new HtmlWebpackPlugin({
 			template: paths.html,
@@ -13,7 +13,7 @@ export function buildPlugins({ paths, isDev }: BuildConfig): WebpackPluginInstan
 		new MiniCssExtractPlugin({
 			filename: 'css/[name].[contenthash:7].css',
 		}),
-		isDev
+		analyzer
 			? new BundleAnalyzerPlugin({
 					openAnalyzer: false,
 			  })
