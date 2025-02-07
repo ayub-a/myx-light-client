@@ -3,9 +3,9 @@ import { lazy } from 'react'
 // export const ContactLazy = lazy(() => import('./Contact'))
 
 // NOT FOR PRODUCTION
-export const ContactLazy = lazy(
+export const ContactsLazy = lazy(
 	() =>
 		new Promise((resolve) => {
-			setTimeout(() => resolve(import('./Contact')), 1500)
+			setTimeout(() => resolve(import('./Contacts')), 1500)
 		}) as any
 )
