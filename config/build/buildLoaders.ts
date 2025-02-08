@@ -4,6 +4,16 @@ import { BuildConfig } from './types'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 
 export function buildLoaders({ isDev }: BuildConfig): RuleSetRule[] {
+	const fileLoader = {
+		test: /\.png$/,
+		use: ['file-loader'],
+	}
+
+	const svgLoader = {
+		test: /\.svg$/,
+		use: ['@svgr/webpack'],
+	}
+
 	const cssLoader = {
 		test: /\.scss$/i,
 		use: [
@@ -15,6 +25,7 @@ export function buildLoaders({ isDev }: BuildConfig): RuleSetRule[] {
 						auto: /\.module\.scss/,
 						localIdentName: isDev ? '[path][name]__[local]--[hash:base64:5]' : '[hash:base64:5]',
 						namedExport: false,
+						exportLocalsConvention: 'dashes',
 					},
 				},
 			},
@@ -36,5 +47,5 @@ export function buildLoaders({ isDev }: BuildConfig): RuleSetRule[] {
 		exclude: /node_modules/,
 	}
 
-	return [babelLoader, tsLoader, cssLoader]
+	return [babelLoader, tsLoader, cssLoader, svgLoader, fileLoader]
 }
