@@ -1,0 +1,70 @@
+.Navbar {
+	height: 100px;
+	text-transform: capitalize;
+	font-size: var(--font-size-s);
+	box-shadow: -1px 0px 7px 0px #0000001c;
+}
+
+.top_header,
+.bottom_header {
+	display: flex;
+	justify-content: center;
+
+	.container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 50px;
+		max-width: 1280px;
+		width: 100%;
+	}
+}
+
+.top_header {
+	padding: 5px 30px;
+}
+
+.bottom_header {
+	background: #fff;
+	padding: 12px 30px;
+}
+
+.logo {
+	display: flex;
+	gap: 15px;
+}
+
+.logo_title {
+	font-weight: 600;
+	font-size: 14px;
+	line-height: normal;
+	text-transform: uppercase;
+}
+
+.catalog_btn {
+	height: 40px;
+}
+
+.info_nav {
+	margin-right: 30px;
+}
+
+.work_time,
+.extra_navigation,
+.extra_items,
+.wholesale {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	position: relative;
+}
+
+.extra_items {
+	gap: 20px;
+}
+
+.search_and_nav {
+	display: flex;
+	justify-content: end;
+	width: 100%;
+}

@@ -1,0 +1,13 @@
+.InfoNavigation {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 15px;
+	list-style-type: none;
+
+	li {
+		a {
+			color: var(--fonst-color);
+		}
+	}
+}

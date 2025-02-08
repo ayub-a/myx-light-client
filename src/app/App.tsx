@@ -1,5 +1,5 @@
-import { CategoryNavigation, MainNavigation } from 'shared/ui'
 import { useTheme } from 'shared/lib/theme'
+import { Navbar } from 'widgets/Navbar/ui/Navbar'
 import { clsnm } from 'shared/lib/classNames'
 
 import { AppRouter } from './router'
@@ -11,12 +11,14 @@ export const App = () => {
 
 	return (
 		<div className={clsnm('App', [`theme_${theme}`])}>
-			<MainNavigation />
-			<CategoryNavigation />
+			<Navbar />
 
-			<button onClick={toggleTheme}>Theme: {theme}</button>
+			{/* <MainNavigation />
+			<CategoryNavigation /> */}
 
-			<AppRouter />
+			{/* <button onClick={toggleTheme}>Theme: {theme}</button> */}
+
+			{/* <AppRouter /> */}
 		</div>
 	)
 }

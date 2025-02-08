@@ -1,0 +1,22 @@
+.MainNavigation {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+	width: fit-content;
+
+	list-style: none;
+
+	li {
+		a {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 5px;
+
+			&:last-child {
+				padding-right: 0;
+			}
+		}
+	}
+}

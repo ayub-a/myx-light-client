@@ -1,0 +1,16 @@
+.LocaleTime {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	position: relative;
+
+	&:before {
+		content: 'uz';
+		position: absolute;
+		top: 6px;
+		left: -6px;
+		font-size: 10px;
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+}
