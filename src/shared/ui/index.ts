@@ -1,3 +1,5 @@
+export { Input } from './Input/Input'
+export { Button } from './Button/Button'
 export { CategoryNavigation } from './CategoryNavigation/CategoryNavigation'
 export { MainNavigation } from './MainNavigation/MainNavigation'
 export { ThemeSwitcher } from './ThemeSwitcher/ThemeSwitcher'

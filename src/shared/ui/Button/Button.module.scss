@@ -1,0 +1,24 @@
+.Button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 6px;
+	cursor: pointer;
+	color: inherit;
+	border: none;
+	background: none;
+
+	&.clear {
+		border: none;
+		padding: 0;
+		background: none;
+	}
+
+	&.rounded {
+		padding: 5px 10px;
+		border-radius: 5px;
+		background-color: var(--primary-color);
+		font: var(--font-m);
+		color: #fff;
+	}
+}

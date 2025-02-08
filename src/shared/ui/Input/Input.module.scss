@@ -1,0 +1,21 @@
+.Input {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	background-color: var(--bg-color);
+	border: 0.5px solid var(--secodary-color);
+	border-radius: 5px;
+
+	&.icon {
+		padding-right: 15px;
+	}
+
+	input {
+		background: none;
+		border: none;
+		outline: none;
+		padding: 5px 15px;
+		width: 100%;
+	}
+}
