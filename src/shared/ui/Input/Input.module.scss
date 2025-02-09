@@ -3,7 +3,7 @@
 	justify-content: space-between;
 	align-items: center;
 
-	background-color: var(--bg-color);
+	background-color: var(--bg-secondary-color);
 	border: 0.5px solid var(--secodary-color);
 	border-radius: 5px;
 
@@ -12,6 +12,7 @@
 	}
 
 	input {
+		color: var(--font-color);
 		background: none;
 		border: none;
 		outline: none;
