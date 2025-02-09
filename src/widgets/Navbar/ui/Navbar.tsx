@@ -6,7 +6,6 @@ import { MainNavigation } from './MainNavigation/MainNavigation'
 import { SearchInput } from './SearchInput/SearchInput'
 import { InfoNavigation } from './InfoNavigation/InfoNavigation'
 
-import WholesaleIcon from 'shared/assets/icons/wholesale.svg'
 import LogoPng from 'shared/assets/logo.png'
 
 import { clsnm } from 'shared/lib/classNames'
@@ -20,7 +19,7 @@ export const Navbar = () => {
 				<div className={cls.container}>
 					<Locale />
 
-					<Button icon='shop' style='clear'>
+					<Button icon='shop' style='clear' size='s'>
 						Пн-Пт, 9:00-18:00
 					</Button>
 
@@ -29,10 +28,9 @@ export const Navbar = () => {
 							<InfoNavigation />
 						</div>
 
-						<div className={cls.wholesale}>
-							<WholesaleIcon />
-							<span>wholesale</span>
-						</div>
+						<Button icon='wholesale' style='clear' size='s'>
+							wholesale
+						</Button>
 
 						<LocaleTime />
 					</div>
@@ -47,9 +45,7 @@ export const Navbar = () => {
 					</div>
 
 					<div className={cls.search_and_nav}>
-						<Button icon='burger' className={cls.catalog_btn}>
-							Catalog
-						</Button>
+						<Button icon='burger'>Catalog</Button>
 
 						<SearchInput />
 

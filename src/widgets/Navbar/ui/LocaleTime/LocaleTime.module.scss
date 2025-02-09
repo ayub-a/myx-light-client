@@ -13,4 +13,8 @@
 		font-weight: 600;
 		text-transform: uppercase;
 	}
+
+	svg > path {
+		stroke: var(--font-color);
+	}
 }

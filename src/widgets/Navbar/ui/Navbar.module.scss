@@ -1,5 +1,4 @@
 .Navbar {
-	height: 100px;
 	text-transform: capitalize;
 	font-size: var(--font-size-s);
 	box-shadow: -1px 0px 7px 0px #0000001c;
@@ -21,11 +20,12 @@
 }
 
 .top_header {
+	background-color: var(--bg-secondary-color);
 	padding: 5px 30px;
 }
 
 .bottom_header {
-	background: #fff;
+	background-color: var(--bg-color);
 	padding: 12px 30px;
 }
 
@@ -41,18 +41,13 @@
 	text-transform: uppercase;
 }
 
-.catalog_btn {
-	height: 40px;
-}
-
 .info_nav {
 	margin-right: 30px;
 }
 
 .work_time,
 .extra_navigation,
-.extra_items,
-.wholesale {
+.extra_items {
 	display: flex;
 	align-items: center;
 	gap: 6px;

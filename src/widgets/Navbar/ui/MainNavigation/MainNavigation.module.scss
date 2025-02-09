@@ -19,4 +19,8 @@
 			}
 		}
 	}
+
+	svg > path {
+		stroke: var(--font-color);
+	}
 }
