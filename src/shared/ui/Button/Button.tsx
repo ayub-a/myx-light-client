@@ -6,6 +6,7 @@ import Language from 'shared/assets/icons/language.svg'
 import Shop from 'shared/assets/icons/shop.svg'
 import Burger from 'shared/assets/icons/burger.svg'
 import WholesaleIcon from 'shared/assets/icons/wholesale.svg'
+import ArrowRight from 'shared/assets/icons/arrowRight.svg'
 
 import cls from './Button.module.scss'
 
@@ -15,11 +16,12 @@ const icons = {
 	shop: Shop,
 	burger: Burger,
 	wholesale: WholesaleIcon,
+	'arrow-right': ArrowRight,
 }
 
 type ButtonStyles = 'clear' | 'rounded' | 'square' | 'outline-rounded' | 'outline-square'
 
-interface ButtonProps extends Omit<HTMLAttributes<HTMLButtonElement>, 'style'> {
+export interface ButtonProps extends Omit<HTMLAttributes<HTMLButtonElement>, 'style'> {
 	style?: ButtonStyles
 	icon?: keyof typeof icons
 	iconPos?: 'left' | 'right'
