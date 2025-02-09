@@ -7,18 +7,63 @@
 	color: inherit;
 	border: none;
 	background: none;
+	padding: 5px 10px;
 
+	// BTN SIZE
+	&.s {
+		font: var(--font-s);
+	}
+
+	&.m {
+		font: var(--font-m);
+	}
+
+	&.l {
+		font: var(--font-l);
+	}
+
+	// STYLE
 	&.clear {
-		border: none;
+		border: 2px solid transparent;
 		padding: 0;
 		background: none;
 	}
 
 	&.rounded {
-		padding: 5px 10px;
+		border: 2px solid transparent;
 		border-radius: 5px;
 		background-color: var(--primary-color);
-		font: var(--font-m);
 		color: #fff;
+	}
+
+	&.square {
+		border: 2px solid transparent;
+		border-radius: 0;
+		background-color: var(--primary-color);
+		color: #fff;
+	}
+
+	&.outline-rounded {
+		border: 2px solid var(--primary-color);
+		border-radius: 5px;
+		color: var(--primary-color);
+	}
+
+	&.outline-square {
+		border: 2px solid var(--primary-color);
+		border-radius: 0;
+		color: var(--primary-color);
+	}
+
+	&:not([data-icon='burger'], [data-icon='location']) {
+		svg > path {
+			stroke: var(--font-color);
+		}
+	}
+
+	&[data-icon='location'] {
+		svg > path {
+			fill: var(--font-color);
+		}
 	}
 }
