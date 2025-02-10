@@ -1,3 +1,4 @@
+export { Icon } from './Icon/Icon'
 export { Input } from './Input/Input'
 export { Button } from './Button/Button'
 export { CategoryNavigation } from './CategoryNavigation/CategoryNavigation'

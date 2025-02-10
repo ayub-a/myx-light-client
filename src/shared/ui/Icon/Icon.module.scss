@@ -1,0 +1,9 @@
+.Icon {
+	:not([data-icon='burger'], [data-icon='location']) path {
+		stroke: var(--font-color);
+	}
+
+	[data-icon='location'] path {
+		fill: var(--font-color);
+	}
+}
