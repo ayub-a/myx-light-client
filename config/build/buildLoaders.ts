@@ -1,7 +1,6 @@
 import { RuleSetRule } from 'webpack'
-import { BuildConfig } from './types'
-
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import { BuildConfig } from './types'
 
 export function buildLoaders({ isDev }: BuildConfig): RuleSetRule[] {
 	const fileLoader = {
@@ -9,9 +8,18 @@ export function buildLoaders({ isDev }: BuildConfig): RuleSetRule[] {
 		use: ['file-loader'],
 	}
 
-	const svgLoader = {
+	const svgSpriteLoader = {
 		test: /\.svg$/,
-		use: ['@svgr/webpack'],
+		use: [
+			{
+				loader: 'svg-sprite-loader',
+				options: {
+					extract: true,
+					spriteFilename: 'icons.svg',
+					symbolId: 'icon-[name]',
+				},
+			},
+		],
 	}
 
 	const cssLoader = {
@@ -47,5 +55,5 @@ export function buildLoaders({ isDev }: BuildConfig): RuleSetRule[] {
 		exclude: /node_modules/,
 	}
 
-	return [babelLoader, tsLoader, cssLoader, svgLoader, fileLoader]
+	return [babelLoader, tsLoader, cssLoader, fileLoader, svgSpriteLoader]
 }
