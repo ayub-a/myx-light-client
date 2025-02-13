@@ -1,3 +1,4 @@
+export { SidebarNavigation } from './SidebarNavigation/SidebarNavigation'
 export { PageLayout } from './PageLayout/PageLayout'
 export { GridLayout } from './GridLayout/GridLayout'
 export { Icon } from './Icon/Icon'

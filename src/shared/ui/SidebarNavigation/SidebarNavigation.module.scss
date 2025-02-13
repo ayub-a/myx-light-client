@@ -1,0 +1,26 @@
+.SidebarNavigation {
+	display: flex;
+	flex-direction: column;
+	height: 300px;
+	border: 1px solid #bfbfbf;
+	border-radius: 8px;
+	list-style: none;
+	overflow: scroll;
+}
+
+.nav_item {
+	width: 100%;
+	padding: 13px 20px;
+	border-bottom: 1px solid #bfbfbf;
+	cursor: pointer;
+
+	&:hover {
+		background-color: var(--primary-color);
+		color: #fff;
+	}
+}
+
+.active {
+	background-color: var(--primary-color);
+	color: #fff !important;
+}
