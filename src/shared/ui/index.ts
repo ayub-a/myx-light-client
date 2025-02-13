@@ -1,6 +1,8 @@
 export { PageLayout } from './PageLayout/PageLayout'
 export { GridLayout } from './GridLayout/GridLayout'
 export { Icon } from './Icon/Icon'
+export { ButtonLink } from './ButtonLink/ButtonLink'
+export { CustomLink } from './CustomLink/CustomLink'
 export { Input } from './Input/Input'
 export { Button } from './Button/Button'
 export { CategoryNavigation } from './CategoryNavigation/CategoryNavigation'
