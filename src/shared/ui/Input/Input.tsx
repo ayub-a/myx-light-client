@@ -1,7 +1,6 @@
 import { ChangeEvent, InputHTMLAttributes, PropsWithChildren } from 'react'
 
-import SearchIcon from 'shared/assets/icons/search.svg'
-
+import { Icon } from '../Icon/Icon'
 import { clsnm } from 'shared/lib/classNames'
 
 import cls from './Input.module.scss'
@@ -23,7 +22,7 @@ export const Input = (props: PropsWithChildren<InputProps>) => {
 	return (
 		<div className={clsnm(cls.Input, [], { [cls.icon]: icon })}>
 			<input onChange={changeHandler} type={type} value={value} {...otherProps} />
-			{icon ? <SearchIcon /> : null}
+			{icon ? <Icon name='search' /> : null}
 		</div>
 	)
 }

@@ -2,6 +2,11 @@
 	text-transform: capitalize;
 	font-size: var(--font-size-s);
 	box-shadow: -1px 0px 7px 0px #0000001c;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 10;
 }
 
 .top_header,
@@ -55,7 +60,7 @@
 }
 
 .extra_items {
-	gap: 20px;
+	gap: 30px;
 }
 
 .search_and_nav {

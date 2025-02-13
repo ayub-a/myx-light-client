@@ -1,12 +1,12 @@
-import { Button } from 'shared/ui'
+import { Button, CustomLink, Icon } from 'shared/ui'
+
+import LogoPng from 'shared/assets/logo.png'
 
 import { Locale } from './Locale/Locale'
 import { LocaleTime } from './LocaleTime/LocaleTime'
 import { MainNavigation } from './MainNavigation/MainNavigation'
 import { SearchInput } from './SearchInput/SearchInput'
 import { InfoNavigation } from './InfoNavigation/InfoNavigation'
-
-import LogoPng from 'shared/assets/logo.png'
 
 import { clsnm } from 'shared/lib/classNames'
 
@@ -19,8 +19,9 @@ export const Navbar = () => {
 				<div className={cls.container}>
 					<Locale />
 
-					<Button icon='shop' style='clear' size='s'>
-						Пн-Пт, 9:00-18:00
+					<Button style='clear' size='s'>
+						<Icon name='shop' />
+						Mn-Fr, 9:00-18:00
 					</Button>
 
 					<div className={cls.extra_items}>
@@ -28,7 +29,8 @@ export const Navbar = () => {
 							<InfoNavigation />
 						</div>
 
-						<Button icon='wholesale' style='clear' size='s'>
+						<Button style='clear' size='s'>
+							<Icon name='wholesale' />
 							wholesale
 						</Button>
 
@@ -39,16 +41,17 @@ export const Navbar = () => {
 
 			<div className={cls.bottom_header}>
 				<div className={cls.container}>
-					<div className={cls.logo}>
+					<CustomLink to='/' className={cls.logo} style='clear'>
 						<img src={LogoPng} alt='logo' />
 						<h1 className={cls.logo_title}>Automotive Lighting</h1>
-					</div>
+					</CustomLink>
 
 					<div className={cls.search_and_nav}>
-						<Button icon='burger'>Catalog</Button>
-
+						<Button>
+							<Icon name='burger' />
+							Catalog
+						</Button>
 						<SearchInput />
-
 						<MainNavigation />
 					</div>
 				</div>

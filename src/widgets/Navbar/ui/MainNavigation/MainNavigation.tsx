@@ -1,36 +1,33 @@
 import { Link } from 'react-router-dom'
 
-import NotificationIcon from 'shared/assets/icons/notification.svg'
-import FavouriteIcon from 'shared/assets/icons/favourite.svg'
-import CartIcon from 'shared/assets/icons/cart.svg'
-import UserIcon from 'shared/assets/icons/user.svg'
-
+import { ButtonLink } from 'shared/ui/ButtonLink/ButtonLink'
 import { clsnm } from 'shared/lib/classNames'
 
 import cls from './MainNavigation.module.scss'
+import { Icon } from 'shared/ui'
 
 export const MainNavigation = () => {
 	return (
 		<ul className={clsnm(cls.MainNavigation)}>
 			<li>
-				<Link to='/'>
-					<NotificationIcon />
-				</Link>
+				<ButtonLink to='/' style='clear'>
+					<Icon name='notification' size={24} />
+				</ButtonLink>
 			</li>
 			<li>
-				<Link to='/'>
-					<FavouriteIcon />
-				</Link>
+				<ButtonLink to='/' style='clear'>
+					<Icon name='favourites' size={24} />
+				</ButtonLink>
 			</li>
 			<li>
-				<Link to='/'>
-					<CartIcon />
-				</Link>
+				<ButtonLink to='/' style='clear'>
+					<Icon name='cart' size={24} />
+				</ButtonLink>
 			</li>
 			<li>
-				<Link to='/'>
-					<UserIcon />
-				</Link>
+				<ButtonLink to='/' style='clear'>
+					<Icon name='user' size={24} />
+				</ButtonLink>
 			</li>
 		</ul>
 	)

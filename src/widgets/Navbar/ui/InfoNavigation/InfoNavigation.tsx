@@ -1,5 +1,4 @@
-import { Link } from 'react-router-dom'
-
+import { CustomLink } from 'shared/ui/CustomLink/CustomLink'
 import { clsnm } from 'shared/lib/classNames'
 
 import cls from './InfoNavigation.module.scss'
@@ -8,13 +7,13 @@ export const InfoNavigation = () => {
 	return (
 		<ul className={clsnm(cls.InfoNavigation)}>
 			<li>
-				<Link to='/'>delivery</Link>
+				<CustomLink to='/'>delivery</CustomLink>
 			</li>
 			<li>
-				<Link to='/'>contacts</Link>
+				<CustomLink to='/contacts'>contacts</CustomLink>
 			</li>
 			<li>
-				<Link to='/'>about</Link>
+				<CustomLink to='/about'>about</CustomLink>
 			</li>
 		</ul>
 	)
