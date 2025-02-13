@@ -1,0 +1,15 @@
+.AppLayout {
+	display: flex;
+	flex-direction: column;
+}
+
+.container {
+	padding: 0 30px;
+	margin-top: calc(var(--navbar-height) + 30px);
+	padding-bottom: 50px;
+
+	@media screen and (max-width: 610px) {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
