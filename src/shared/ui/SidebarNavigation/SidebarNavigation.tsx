@@ -21,8 +21,8 @@ export const SidebarNavigation = (props: PropsWithChildren<SidebarNavigationProp
 	return (
 		<ul className={clsnm(cls.SidebarNavigation, [], {})}>
 			{data.map(({ path, name }) => (
-				<li key={name} onClick={() => categoryHandler(name)}>
-					<CustomLink to={path} style='clear' className={clsnm(cls.nav_item, [], { [cls.active]: currentCategory === name })}>
+				<li key={name} onClick={() => categoryHandler(name)} className={clsnm(cls.nav_item, [], { [cls.active]: currentCategory === name })}>
+					<CustomLink to={path} style='clear' className={cls.link}>
 						{name}
 					</CustomLink>
 				</li>

@@ -1,7 +1,8 @@
 .SidebarNavigation {
 	display: flex;
 	flex-direction: column;
-	height: 300px;
+	max-height: 300px;
+	height: 100%;
 	border: 1px solid #bfbfbf;
 	border-radius: 8px;
 	list-style: none;
@@ -10,13 +11,21 @@
 
 .nav_item {
 	width: 100%;
-	padding: 13px 20px;
 	border-bottom: 1px solid #bfbfbf;
 	cursor: pointer;
+	text-transform: capitalize !important;
+
+	&:last-child {
+		border-bottom: none;
+	}
 
 	&:hover {
 		background-color: var(--primary-color);
 		color: #fff;
+	}
+
+	.link {
+		padding: 13px 20px;
 	}
 }
 
