@@ -10,7 +10,7 @@ export const NavigationRoutes = () => {
 					key={route.name}
 					path={route.path}
 					element={
-						<Suspense key={route.name} fallback={'Loding..'}>
+						<Suspense key={route.name} fallback={route.loader}>
 							{route.component}
 						</Suspense>
 					}

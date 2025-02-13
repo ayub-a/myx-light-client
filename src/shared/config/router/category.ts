@@ -1,17 +1,17 @@
 export enum CategoryRoutes {
 	ADAPTERS = 'adapters',
 	KSENON = 'ksenon',
-	GABARIT = 'gabarit',
+	GABARIT = 'gabariti',
 	GALOGEN = 'galogen',
 	LED = 'led',
 }
 
 export const categoryRoutePaths: Record<CategoryRoutes, string> = {
-	[CategoryRoutes.ADAPTERS]: `category/adapters`,
-	[CategoryRoutes.KSENON]: `category/ksenon`,
-	[CategoryRoutes.GABARIT]: `category/gabariti`,
-	[CategoryRoutes.GALOGEN]: `category/galogen`,
-	[CategoryRoutes.LED]: `category/led`,
+	[CategoryRoutes.ADAPTERS]: `/category/adapters`,
+	[CategoryRoutes.KSENON]: `/category/ksenon`,
+	[CategoryRoutes.GABARIT]: `/category/gabariti`,
+	[CategoryRoutes.GALOGEN]: `/category/galogen`,
+	[CategoryRoutes.LED]: `/category/led`,
 }
 
 interface RouteConfig {
