@@ -1,7 +1,7 @@
 import { Suspense } from 'react'
 import { Route } from 'react-router-dom'
 
-import { SearchByCar } from 'pages/SearchByCar'
+import { SearchByCar } from 'pages'
 
 import { searchByCarRoutes } from '../config/searchByCar'
 
