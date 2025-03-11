@@ -1,0 +1,90 @@
+.Sidebar {
+	border: 1px solid #bfbfbf;
+	border-radius: 8px;
+	padding: 25px;
+	position: relative;
+	overflow: hidden;
+
+	.car_and_logo {
+		// .car_logo {
+		// }
+
+		.car_img {
+			height: 195px;
+
+			img {
+				filter: grayscale(0.5);
+				width: 420px;
+				position: absolute;
+				top: 25px;
+				right: -120px;
+			}
+		}
+	}
+
+	.about_car {
+		.brand_model_body {
+			padding-bottom: 10px;
+			border-bottom: 1px solid #bfbfbf;
+
+			h3 {
+				font-size: 33px;
+				font-weight: 500;
+				margin-bottom: 10px;
+			}
+
+			span {
+				font-size: 20px;
+				color: #959595;
+				text-transform: capitalize;
+			}
+		}
+	}
+
+	.about_car_list {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+		margin-top: 15px;
+	}
+
+	.about_item {
+		display: flex;
+		justify-content: space-between;
+		text-transform: capitalize;
+		font-size: 16px;
+	}
+
+	.title {
+		color: var(--secondary-color);
+		white-space: nowrap;
+		transition: 0.2s;
+	}
+
+	.divider {
+		width: 100%;
+		position: relative;
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 13px;
+			left: 15px;
+			right: 15px;
+			height: 1px;
+			background: repeating-linear-gradient(
+				to right,
+				var(--secondary-color),
+				var(--secondary-color) 5px,
+				transparent 5px,
+				transparent 15px
+			);
+			transition: 0.2s;
+		}
+	}
+
+	.value {
+		white-space: nowrap;
+		transition: 0.2s;
+	}
+}
