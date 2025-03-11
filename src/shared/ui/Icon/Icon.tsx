@@ -8,6 +8,14 @@ import arrowRight from 'shared/assets/icons/arrowRight.svg'
 import localeTime from 'shared/assets/icons/localeTime.svg'
 import emptyCategory from 'shared/assets/icons/emptyCategory.svg'
 import search from 'shared/assets/icons/search.svg'
+import addtocart from 'shared/assets/icons/addtocart.svg'
+
+// badges
+import completed from 'shared/assets/icons/completed.svg'
+import warning from 'shared/assets/icons/warning.svg'
+import boughthisweek from 'shared/assets/icons/boughthisweek.svg'
+import car from 'shared/assets/icons/car.svg'
+import discount from 'shared/assets/icons/discount.svg'
 
 // main nav
 import notification from 'shared/assets/icons/notification.svg'
@@ -34,6 +42,12 @@ const icons = {
 	emptyCategory,
 	favourites,
 	like: favourites,
+	car,
+	completed,
+	boughthisweek,
+	warning,
+	discount,
+	addtocart,
 }
 
 export interface IconProps {
