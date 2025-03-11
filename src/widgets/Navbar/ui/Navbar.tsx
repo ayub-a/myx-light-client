@@ -1,4 +1,4 @@
-import { Button, CustomLink, Icon } from 'shared/ui'
+import { Button, CustomLink, Hint, Icon } from 'shared/ui'
 
 import LogoPng from 'shared/assets/logo.png'
 
@@ -29,12 +29,16 @@ export const Navbar = () => {
 							<InfoNavigation />
 						</div>
 
-						<Button style='clear' size='s'>
-							<Icon name='wholesale' />
-							wholesale
-						</Button>
+						<Hint text='Soon' direction='bottom'>
+							<Button style='clear' size='s'>
+								<Icon name='wholesale' />
+								wholesale
+							</Button>
+						</Hint>
 
-						<LocaleTime />
+						<Hint text='Current Time (Uzbekistan)' direction='bottom'>
+							<LocaleTime />
+						</Hint>
 					</div>
 				</div>
 			</div>

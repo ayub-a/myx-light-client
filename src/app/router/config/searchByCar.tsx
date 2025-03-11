@@ -1,5 +1,6 @@
 import { ReactNode } from 'react'
-import { CarBody, CarBrand, CarModel, Product } from 'pages'
+import { CarBody, CarBrand, CarModel } from 'pages'
+import { Product } from 'pages/Product'
 import { searchByCarRoutePaths, SearchByCarRoutes } from 'shared/config/router/searchByCar'
 import { Loader } from 'shared/ui'
 

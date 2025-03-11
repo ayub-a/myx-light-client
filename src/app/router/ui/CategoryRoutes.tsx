@@ -1,7 +1,8 @@
 import { Suspense } from 'react'
 import { Navigate, Route } from 'react-router-dom'
 
-import { Product, ProductCategory } from 'pages'
+import { ProductCategory } from 'pages'
+import { Product } from 'pages/Product'
 
 import { categoryRoutes } from '../config/category'
 import { Loader } from 'shared/ui'

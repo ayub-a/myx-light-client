@@ -1,12 +1,15 @@
 .AppLayout {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+	padding: 0 30px;
 }
 
 .container {
-	padding: 0 30px;
 	margin-top: calc(var(--navbar-height) + 30px);
 	padding-bottom: 50px;
+	max-width: var(--main-container-width);
+	width: 100%;
 
 	@media screen and (max-width: 610px) {
 		padding-left: 15px;
