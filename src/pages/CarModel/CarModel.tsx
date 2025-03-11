@@ -9,6 +9,8 @@ import { GridLayout } from 'shared/ui'
 
 interface CarModelProps {}
 
+const models = ['A1', 'A3', 'A4', 'A5', 'A6', 'A7', 'A8', 'Q3', 'Q5', 'Q7', 'Q8', 'TT']
+
 const CarModel = (props: PropsWithChildren<CarModelProps>) => {
 	const navigate = useNavigate()
 	const { pathname } = useLocation()
@@ -26,17 +28,14 @@ const CarModel = (props: PropsWithChildren<CarModelProps>) => {
 			</div>
 
 			<GridLayout>
-				{new Array(15).fill('A').map((model, i) => (
+				{models.map((model) => (
 					<div
-						key={i}
+						key={model}
 						className={cls.model_item}
-						data-model={`${model}${i + 1}`}
-						onClick={() => handleModelSelect(`${model}${i + 1}`)}
+						data-model={model}
+						onClick={() => handleModelSelect(model)}
 					>
-						<span className={cls.model_title}>
-							{model}
-							{i + 1}
-						</span>
+						<span className={cls.model_title}>{model}</span>
 					</div>
 				))}
 			</GridLayout>

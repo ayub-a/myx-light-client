@@ -40,7 +40,7 @@ const CarBody = (props: PropsWithChildren<CarBodyProps>) => {
 						key={i}
 						className={cls.body_item}
 						data-gen={i + 1}
-						onClick={() => handleBodySelect('sedan', 2)}
+						onClick={() => handleBodySelect('sedan', i + 1)}
 					>
 						<div className={cls.substrate}>
 							<div className={cls.body_header}>

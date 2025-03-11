@@ -43,15 +43,9 @@ export const Sidebar = (props: SidebarProps) => {
 
 				<div className={clsnm(cls.stage, [], { [cls.active_stage]: !!stage[3] })}>
 					<div className={cls.stage_round}>3</div>
-					<h3 className={cls.stage_title}>Кузов</h3>
+					<h3 className={cls.stage_title}>{params.body ? `${params.body}, gen ${params.gen}` : 'Кузов'}</h3>
 				</div>
 			</div>
-
-			{/* <h2>Search By Car Sidebar</h2>
-			<span>{params?.brand ? `Brand: ${params.brand}` : 'Brand'}</span>
-			<span>{params?.model ? `Model: ${params.model}` : 'Model'}</span>
-			<span>{params?.body ? `Body: ${params.body}` : 'Body'}</span>
-			<span>{params?.gen ? `Gen: ${params.gen}` : 'Gen'}</span> */}
 		</div>
 	)
 }

@@ -24,6 +24,8 @@ import favourites from 'shared/assets/icons/favourite.svg'
 import cart from 'shared/assets/icons/cart.svg'
 import user from 'shared/assets/icons/user.svg'
 
+// car light purposes
+
 import { clsnm } from 'shared/lib/classNames'
 
 import cls from './Icon.module.scss'
@@ -52,8 +54,10 @@ const icons = {
 	info,
 }
 
+export type Icons = keyof typeof icons
+
 export interface IconProps {
-	name: keyof typeof icons
+	name: Icons
 	size?: number
 	color?: string
 	className?: string

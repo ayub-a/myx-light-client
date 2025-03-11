@@ -35,6 +35,10 @@
 	overflow: hidden;
 	cursor: pointer;
 
+	&:hover {
+		border-color: #ffbf95;
+	}
+
 	.model_title {
 		position: absolute;
 		font-size: 55px;
