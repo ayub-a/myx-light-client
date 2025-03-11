@@ -9,6 +9,7 @@ import localeTime from 'shared/assets/icons/localeTime.svg'
 import emptyCategory from 'shared/assets/icons/emptyCategory.svg'
 import search from 'shared/assets/icons/search.svg'
 import addtocart from 'shared/assets/icons/addtocart.svg'
+import info from 'shared/assets/icons/info.svg'
 
 // badges
 import completed from 'shared/assets/icons/completed.svg'
@@ -48,6 +49,7 @@ const icons = {
 	warning,
 	discount,
 	addtocart,
+	info,
 }
 
 export interface IconProps {
