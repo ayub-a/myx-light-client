@@ -6,6 +6,7 @@ import ProductCategoryItemPng from 'shared/assets/productItem.png'
 import { clsnm } from 'shared/lib/classNames'
 
 import cls from './ProductCategoryItem.module.scss'
+import { priceFormatter } from 'shared/lib/priceFormatter'
 
 interface ProductCategoryItemProps {
 	product: {
@@ -15,13 +16,15 @@ interface ProductCategoryItemProps {
 }
 
 export const ProductCategoryItem = ({ product }: PropsWithChildren<ProductCategoryItemProps>) => {
-	const priceWithDiscount = product.price * (1 - product.discount / 100)
-
 	return (
-		<div className={clsnm(cls.ProductCategoryItem, [], {})}>
+		<div className={clsnm(cls.ProductCategoryItem, [], { out_of_stock: !product.price })}>
 			<div className={cls.product_top_area}>
 				<div className={cls.discount_and_like}>
-					{product.discount && product.price ? <div className={cls.discount}>-{product.discount}%</div> : <div></div>}
+					{product.discount && product.price ? (
+						<div className={cls.discount}>-{product.discount}%</div>
+					) : (
+						<div></div>
+					)}
 					<Icon name='like' size={26} />
 				</div>
 
@@ -36,8 +39,14 @@ export const ProductCategoryItem = ({ product }: PropsWithChildren<ProductCatego
 
 				{product.price ? (
 					<div className={cls.product_price_wrap}>
-						{product.discount ? <div className={cls.product_price_with_discount}>{new Intl.NumberFormat('ru-RU', { style: 'currency', currency: 'SUM', maximumFractionDigits: 0 }).format(product.price)}</div> : null}
-						<div className={cls.product_price}>{new Intl.NumberFormat('ru-RU', { style: 'currency', currency: 'SUM', maximumFractionDigits: 0 }).format(priceWithDiscount || product.price)}</div>
+						{product.discount ? (
+							<div className={cls.product_price_with_discount}>
+								{priceFormatter.defaultPrice(product.price, 'SUM')}
+							</div>
+						) : null}
+						<div className={cls.product_price}>
+							{priceFormatter.priceWithDiscount(product.price, 20, 'SUM')}
+						</div>
 					</div>
 				) : (
 					<h3 className={cls.product_not_available}>Нет в наличии</h3>

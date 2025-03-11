@@ -1,0 +1,29 @@
+.Badges {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+
+	.badge_item {
+		display: flex;
+		align-items: center;
+		gap: 5px;
+		padding: 6px 8px;
+		border-radius: 5px;
+		font-size: 15px;
+	}
+
+	.badge_item > a:last-child > .comma {
+		display: none;
+	}
+
+	[data-badge-type='completed'],
+	[data-badge-type='warning'],
+	[data-badge-type='discount'] {
+		background: #efefef;
+	}
+
+	[data-badge-type='car'],
+	[data-badge-type='boughthisweek'] {
+		background: #fff3d9;
+	}
+}

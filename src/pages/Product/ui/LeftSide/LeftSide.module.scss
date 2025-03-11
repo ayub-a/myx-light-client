@@ -1,0 +1,36 @@
+.LeftSide {
+	width: 100%;
+	display: flex;
+	align-items: flex-start;
+	gap: 15px;
+	position: sticky;
+	top: 130px;
+
+	.img_list {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+
+		.img_item {
+			width: 60px;
+			height: 60px;
+			border: 1px solid var(--secondary-color);
+			border-radius: 5px;
+			overflow: hidden;
+
+			img {
+				width: 100%;
+			}
+		}
+	}
+
+	.big_product_img {
+		border: 1px solid var(--secondary-color);
+		border-radius: 5px;
+		overflow: hidden;
+
+		img {
+			width: 100%;
+		}
+	}
+}

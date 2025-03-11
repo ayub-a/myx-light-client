@@ -1,0 +1,11 @@
+.Product {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 30px;
+}
+
+.product_wrap {
+	display: flex;
+	flex-direction: column;
+}

@@ -1,3 +1,4 @@
+export { Hint } from './Hint/Hint'
 export { Loader } from './Loader/Loader'
 export { SidebarNavigation } from './SidebarNavigation/SidebarNavigation'
 export { PageLayout } from './PageLayout/PageLayout'
