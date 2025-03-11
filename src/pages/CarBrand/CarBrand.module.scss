@@ -60,6 +60,10 @@
 		object-fit: contain;
 	}
 
+	&:hover {
+		border-color: #ffbf95;
+	}
+
 	&:before {
 		content: '';
 		position: absolute;
