@@ -14,12 +14,18 @@ const ProductCategory = () => {
 
 	return (
 		<PageLayout sidebar={<Sidebar />}>
+			<div className={cls.umbrella}></div>
 			<h2 className={cls.category_title}>{category}</h2>
 
 			<div className={cls.content}>
 				<GridLayout col={3}>
 					{new Array(9).fill({ price: 45900, discount: 20 }).map((el, index) => (
-						<CustomLink style='clear' className={cls.custom_link} key={index} to={`${pathname}/${index + 1}`}>
+						<CustomLink
+							style='clear'
+							className={cls.custom_link}
+							key={index}
+							to={`${pathname}/${index + 1}`}
+						>
 							<ProductCategoryItem product={el} />
 						</CustomLink>
 					))}

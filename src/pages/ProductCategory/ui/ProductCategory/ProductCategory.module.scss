@@ -2,7 +2,22 @@
 	margin-top: 20px;
 }
 
+.umbrella {
+	background: #fff;
+	height: 70px;
+	width: 100%;
+	position: fixed;
+	top: 90px;
+	z-index: 10;
+}
+
 .category_title {
+	position: sticky;
+	top: 130px;
+	z-index: 10;
+	padding-bottom: 5px;
+	background: #fff;
+	width: 100%;
 	text-transform: capitalize;
 }
 
