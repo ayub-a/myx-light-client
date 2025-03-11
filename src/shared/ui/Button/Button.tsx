@@ -1,11 +1,11 @@
-import { HTMLAttributes, PropsWithChildren } from 'react'
+import { ButtonHTMLAttributes, PropsWithChildren } from 'react'
 import { clsnm } from 'shared/lib/classNames'
 
 import cls from './Button.module.scss'
 
 type ButtonStyles = 'clear' | 'rounded' | 'square' | 'outline-rounded' | 'outline-square'
 
-export interface ButtonProps extends Omit<HTMLAttributes<HTMLButtonElement>, 'style'> {
+export interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'style'> {
 	style?: ButtonStyles
 	size?: 's' | 'm' | 'l'
 }
