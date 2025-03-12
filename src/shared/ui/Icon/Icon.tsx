@@ -10,6 +10,7 @@ import emptyCategory from 'shared/assets/icons/emptyCategory.svg'
 import search from 'shared/assets/icons/search.svg'
 import addtocart from 'shared/assets/icons/addtocart.svg'
 import info from 'shared/assets/icons/info.svg'
+import confirmPromo from 'shared/assets/icons/confirmPromo.svg'
 
 // badges
 import completed from 'shared/assets/icons/completed.svg'
@@ -52,6 +53,7 @@ const icons = {
 	discount,
 	addtocart,
 	info,
+	confirmPromo,
 }
 
 export type Icons = keyof typeof icons
