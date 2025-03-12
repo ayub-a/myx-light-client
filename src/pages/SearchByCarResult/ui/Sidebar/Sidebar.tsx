@@ -6,7 +6,7 @@ import cls from './Sidebar.module.scss'
 
 import coveredCar from 'shared/assets/carBrands/covered-car.png'
 import audiCar from 'shared/assets/carBrands/audi-car.png'
-import audiLogo from 'shared/assets/carBrands/audi-logo.png'
+import brandAudi from 'shared/assets/carBrands/brand-Audi.png'
 import { useParams } from 'react-router-dom'
 
 interface SidebarProps {}
@@ -26,7 +26,7 @@ export const Sidebar = (props: PropsWithChildren<SidebarProps>) => {
 		<div className={clsnm(cls.Sidebar, [], {})}>
 			<div className={cls.car_and_logo}>
 				<div className={cls.car_logo}>
-					<img src={audiLogo} alt='' />
+					<img src={brandAudi} alt='' />
 				</div>
 				<div className={cls.car_img}>
 					<img src={audiCar} alt='' />
