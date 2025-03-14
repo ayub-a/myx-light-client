@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, PropsWithChildren } from 'react'
+import { ButtonHTMLAttributes, memo, PropsWithChildren } from 'react'
 import { clsnm } from 'shared/lib/classNames'
 
 import cls from './Button.module.scss'
@@ -10,12 +10,15 @@ export interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement
 	size?: 's' | 'm' | 'l'
 }
 
-export const Button = (props: PropsWithChildren<ButtonProps>) => {
-	const { children = 'Children Empty', className = '', size = 'm', style = 'rounded', ...other } = props
+export const Button = memo((props: PropsWithChildren<ButtonProps>) => {
+	const { children = 'Children Empty', className = '', size = 'm', style = 'rounded', disabled, ...other } = props
 
 	return (
-		<button className={clsnm(cls.Button, [cls[style], cls[size], className])} {...other}>
+		<button
+			className={clsnm(cls.Button, [cls[style], cls[size], className], { [cls.disabled]: disabled })}
+			{...other}
+		>
 			{children}
 		</button>
 	)
-}
+})

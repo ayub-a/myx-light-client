@@ -9,6 +9,11 @@
 	background: none;
 	padding: 5px 10px;
 
+	&.disabled {
+		opacity: 0.6;
+		cursor: not-allowed;
+	}
+
 	// BTN SIZE
 	&.s {
 		font: var(--font-s);
