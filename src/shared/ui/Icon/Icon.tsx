@@ -11,6 +11,9 @@ import search from 'shared/assets/icons/search.svg'
 import addtocart from 'shared/assets/icons/addtocart.svg'
 import info from 'shared/assets/icons/info.svg'
 import confirmPromo from 'shared/assets/icons/confirmPromo.svg'
+import close from 'shared/assets/icons/close.svg'
+import checkout from 'shared/assets/icons/checkout.svg'
+import box from 'shared/assets/icons/box.svg'
 
 // badges
 import completed from 'shared/assets/icons/completed.svg'
@@ -30,6 +33,7 @@ import user from 'shared/assets/icons/user.svg'
 import { clsnm } from 'shared/lib/classNames'
 
 import cls from './Icon.module.scss'
+import { memo } from 'react'
 
 const icons = {
 	search,
@@ -54,6 +58,10 @@ const icons = {
 	addtocart,
 	info,
 	confirmPromo,
+	close,
+	remove: close,
+	checkout,
+	box,
 }
 
 export type Icons = keyof typeof icons
@@ -65,7 +73,7 @@ export interface IconProps {
 	className?: string
 }
 
-export const Icon = ({ name, size = 19, color = 'currentColor', className }: IconProps) => {
+export const Icon = memo(({ name, size = 19, color = 'currentColor', className }: IconProps) => {
 	const icon = name ? icons[name] : null
 
 	return (
@@ -73,4 +81,4 @@ export const Icon = ({ name, size = 19, color = 'currentColor', className }: Ico
 			<use xlinkHref={`/icons.svg#${icon.id}`} />
 		</svg>
 	)
-}
+})
