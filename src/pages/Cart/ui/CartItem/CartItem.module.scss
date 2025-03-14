@@ -1,0 +1,150 @@
+.CartItem {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid #bfbfbf;
+	padding: 20px 0;
+	min-height: 180px;
+}
+
+.left_block {
+	display: flex;
+	align-items: center;
+}
+
+.checkbox {
+	display: flex;
+
+	input {
+		height: 20px;
+		width: 20px;
+		cursor: pointer;
+	}
+}
+
+.product_block {
+	display: flex;
+	gap: 25px;
+	margin-left: 20px;
+
+	.product_img {
+		position: relative;
+
+		.discount {
+			position: absolute;
+			top: 0;
+			left: 0;
+			font-size: 14px;
+			padding: 2px 6px;
+			background: #ff351f;
+			border-radius: 6px;
+			color: #fff;
+		}
+		img {
+			width: 170px;
+		}
+	}
+
+	.product_about {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		max-width: 400px;
+		width: 100%;
+
+		.product_name {
+			font-size: 20px;
+			font-weight: 500;
+			max-width: 300px;
+			width: 100%;
+		}
+
+		.product_id {
+			font-size: 16px;
+			color: var(--secondary-color);
+		}
+
+		.product_sizes {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			list-style-type: none;
+
+			li {
+				background: #f2f2f2;
+				border-radius: 6px;
+				padding: 4px 8px;
+			}
+		}
+
+		.product_price_wrap {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			color: var(--secondary-color);
+		}
+	}
+}
+
+.product_price {
+	color: var(--primary-color);
+	text-transform: lowercase;
+	font-weight: 600;
+	font-size: 20px;
+
+	&_old {
+		font-size: 20px;
+		font-weight: 300;
+		text-decoration: line-through;
+		color: var(--secondary-color);
+	}
+
+	span {
+		color: var(--secondary-color);
+		font-size: 16px;
+		font-weight: 400;
+	}
+}
+
+.right_block {
+	display: flex;
+	gap: 30px;
+
+	.price_block_wrap {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		.price_block {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+		}
+
+		.product_qty_nav {
+			width: 200px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 4px;
+			border-radius: 8px;
+			border: 1px solid #e2e2e2;
+
+			button {
+				background: #f2f2f2;
+				border: none;
+				border-radius: 6px;
+				padding: 5px 15px;
+				font-size: 21px;
+				cursor: pointer;
+			}
+		}
+	}
+
+	.product_mini_nav {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+		color: #adadad;
+	}
+}

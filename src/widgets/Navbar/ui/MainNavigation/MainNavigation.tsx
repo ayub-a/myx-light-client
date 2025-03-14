@@ -20,7 +20,7 @@ export const MainNavigation = () => {
 				</ButtonLink>
 			</li>
 			<li>
-				<ButtonLink to='/' style='clear'>
+				<ButtonLink to='/cart' style='clear'>
 					<Icon name='cart' size={24} />
 				</ButtonLink>
 			</li>
