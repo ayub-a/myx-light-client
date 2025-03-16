@@ -17,7 +17,7 @@
 		position: absolute;
 		font-size: 20px;
 		font-weight: 400;
-		width: 90%;
+		width: 80%;
 		text-wrap: balance;
 
 		&::first-letter {
@@ -28,9 +28,9 @@
 	.category_img {
 		transform: rotate(350deg);
 		position: absolute;
-		bottom: -90px;
-		right: -25px;
-		height: 100%;
+		bottom: -85px;
+		right: -60px;
+		height: 240px;
 		transition: transform 0.2s;
 	}
 
@@ -51,7 +51,7 @@
 		border-color: #ffbf95;
 
 		.category_img {
-			transform: rotate(350deg) scale(1.2);
+			transform: rotate(350deg) scale(1.05);
 		}
 	}
 

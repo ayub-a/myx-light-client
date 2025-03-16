@@ -41,8 +41,10 @@
 
 	.model_title {
 		position: absolute;
-		font-size: 55px;
+		font-size: 40px;
 		transition: 0.2s ease-in-out;
+		line-height: 45px;
+		top: 15px;
 	}
 
 	&:hover .model_title {
@@ -66,14 +68,31 @@
 	}
 
 	&::after {
+		// width: 100%;
+		// content: attr(data-model);
+		// position: absolute;
+		// top: 115px;
+		// left: 30px;
+		// text-align: start;
+		// text-transform: uppercase;
+		// transform: rotate(333deg);
+		// font-size: 150px;
+		// color: #f7f7f7;
+		// transition: 0.2s ease-in-out;
+		// font-weight: 600;
+
 		content: attr(data-model);
 		position: absolute;
-		top: 165px;
-		left: -10px;
-		transform: rotate(333deg);
-		font-size: 280px;
-		color: #f7f7f7;
+		bottom: 15px;
+		left: 20px;
 		transition: 0.2s ease-in-out;
+
+		color: #f7f7f7;
+		font-size: 115px;
+		font-weight: 600;
+		text-align: start;
+		text-transform: uppercase;
+		white-space: nowrap;
 	}
 
 	&:hover:after {

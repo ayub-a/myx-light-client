@@ -71,7 +71,7 @@
 		}
 
 		.car_img {
-			transform: scale(1.1);
+			transform: scale(1.05);
 		}
 	}
 
@@ -85,7 +85,7 @@
 		justify-content: space-between;
 		align-items: center;
 		border-bottom: 1px solid #bfbfbf;
-		padding-bottom: 15px;
+		padding-bottom: 12px;
 		transition: 0.2s;
 	}
 
@@ -99,8 +99,8 @@
 	.about_car_list {
 		display: flex;
 		flex-direction: column;
-		gap: 5px;
-		margin-top: 15px;
+		gap: 4px;
+		margin-top: 12px;
 	}
 
 	.about_item {
@@ -149,6 +149,7 @@
 		position: absolute;
 		z-index: 3;
 		transition: 0.2s;
+		width: 100%;
 
 		img {
 			object-fit: contain;
@@ -178,11 +179,11 @@
 
 	&:after {
 		content: attr(data-gen);
-		font-size: 180px;
+		font-size: 200px;
 		font-weight: 600;
-		color: #ff660015;
+		color: rgba(255, 102, 0, 0.0823529412);
 		position: absolute;
-		top: 40%;
+		top: 43%;
 		left: 50%;
 		transform: translate(-50%);
 		transition: 0.2s;
