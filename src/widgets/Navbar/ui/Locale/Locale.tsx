@@ -15,7 +15,7 @@ const languages: Record<string, { code: string; lang: string }> = {
 const initialLanguage = localStorage.getItem(LOCAL_STORAGE_LANG_KEY) || languages.ru.code
 
 export const Locale = () => {
-	const { i18n } = useTranslation()
+	const { t, i18n } = useTranslation()
 	const [currentLang, setCurrentLang] = useState(initialLanguage)
 	const [showLangList, setShowLangList] = useState(false)
 
@@ -47,7 +47,7 @@ export const Locale = () => {
 		<div className={clsnm(cls.Locale)}>
 			<Button style='clear' size='s'>
 				<Icon name='location' />
-				<span className={cls.text}>Uzbekistan</span>•<span>SUM</span>
+				<span className={cls.text}>Узбекистан</span>•<span>СУМ</span>
 			</Button>
 
 			<div className={cls.language_section}>

@@ -1,3 +1,12 @@
 {
-	"search by car": "Подбор ламп по авто"
+	"navbar": {
+		"logo-title": "Автомобильное Освещение",
+		"work-schedule": "Пн-Пт",
+		"delivery": "Доставка и оплата",
+		"contacts": "Контакты",
+		"about": "О компании",
+		"wholesale": "Оптом",
+		"catalog": "Католог",
+		"search-placeholder": "Поиск по названию или артикулу"
+	}
 }

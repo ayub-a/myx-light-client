@@ -1,3 +1,13 @@
 {
-	"search by car": "Search by car"
+	"search by car": "Search by car",
+	"navbar": {
+		"logo-title": "Automotive Lighting",
+		"work-schedule": "Mon-Fri",
+		"delivery": "Delivery",
+		"contacts": "Contacts",
+		"about": "About",
+		"wholesale": "Wholesale",
+		"catalog": "Catalog",
+		"search-placeholder": "Search by name or article"
+	}
 }

@@ -1,4 +1,5 @@
 import { PropsWithChildren, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 import { Input } from 'shared/ui'
 import { clsnm } from 'shared/lib/classNames'
@@ -8,6 +9,7 @@ import cls from './SearchInput.module.scss'
 interface SearchInputProps {}
 
 export const SearchInput = ({}: PropsWithChildren<SearchInputProps>) => {
+	const { t } = useTranslation()
 	const [value, setValue] = useState('')
 
 	const changeInput = (value: string) => {
@@ -20,7 +22,7 @@ export const SearchInput = ({}: PropsWithChildren<SearchInputProps>) => {
 				className={cls.input}
 				value={value}
 				onChange={changeInput}
-				placeholder='Search by name or article'
+				placeholder={t('navbar.search-placeholder')}
 				icon
 			/>
 		</div>

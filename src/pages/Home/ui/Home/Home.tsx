@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next'
+
 import { CustomLink, GridLayout, PageLayout } from 'shared/ui'
 import { categoryLinks } from 'shared/config/router/category'
 import { clsnm } from 'shared/lib/classNames'
@@ -10,13 +12,15 @@ import { Sidebar } from '../Sidebar/Sidebar'
 import cls from './Home.module.scss'
 
 const Home = () => {
+	const { t } = useTranslation('categories')
+
 	return (
 		<PageLayout sidebar={<Sidebar />}>
 			<div className={clsnm(cls.Home)}>
 				<GridLayout>
 					{categoryLinks.map((item) => (
 						<CustomLink to={item.path} style='clear' key={item.name} className={cls.category_item}>
-							<h3 className={cls.category_title}>{item.name}</h3>
+							<h3 className={cls.category_title}>{t(`categories.${item.name}`)}</h3>
 							<img src={catgoryItemPng} alt={item.name} className={cls.category_img} />
 						</CustomLink>
 					))}

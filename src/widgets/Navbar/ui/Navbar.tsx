@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { Button, CustomLink, Hint, Icon } from 'shared/ui'
 
 import LogoPng from 'shared/assets/logo.png'
@@ -13,6 +14,8 @@ import { clsnm } from 'shared/lib/classNames'
 import cls from './Navbar.module.scss'
 
 export const Navbar = () => {
+	const { t } = useTranslation()
+
 	return (
 		<div className={clsnm(cls.Navbar)}>
 			<div className={cls.top_header}>
@@ -21,7 +24,7 @@ export const Navbar = () => {
 
 					<Button style='clear' size='s'>
 						<Icon name='shop' />
-						Mn-Fr, 9:00-18:00
+						{t('navbar.work-schedule')}, 9:00-18:00
 					</Button>
 
 					<div className={cls.extra_items}>
@@ -32,7 +35,7 @@ export const Navbar = () => {
 						<Hint text='Soon' direction='bottom'>
 							<Button style='clear' size='s'>
 								<Icon name='wholesale' />
-								wholesale
+								{t('navbar.wholesale')}
 							</Button>
 						</Hint>
 
@@ -47,13 +50,13 @@ export const Navbar = () => {
 				<div className={cls.container}>
 					<CustomLink to='/' className={cls.logo} style='clear'>
 						<img src={LogoPng} alt='logo' />
-						<h1 className={cls.logo_title}>Automotive Lighting</h1>
+						<h1 className={cls.logo_title}>{t('navbar.logo-title')}</h1>
 					</CustomLink>
 
 					<div className={cls.search_and_nav}>
 						<Button>
 							<Icon name='burger' />
-							Catalog
+							{t('navbar.catalog')}
 						</Button>
 						<SearchInput />
 						<MainNavigation />
