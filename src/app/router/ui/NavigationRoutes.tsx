@@ -7,28 +7,28 @@ import { Loader } from 'shared/ui'
 import { mainNavigationRoutes } from '../config/mainNavigation'
 
 export const NavigationRoutes = () => {
-	return (
-		<>
-			<Route
-				path='/cart'
-				element={
-					<Suspense fallback={<Loader />}>
-						<Cart />
-					</Suspense>
-				}
-			/>
+    return (
+        <>
+            <Route
+                path="/cart"
+                element={
+                    <Suspense fallback={<Loader />}>
+                        <Cart />
+                    </Suspense>
+                }
+            />
 
-			{mainNavigationRoutes.map((route) => (
-				<Route
-					key={route.name}
-					path={route.path}
-					element={
-						<Suspense key={route.name} fallback={route.loader}>
-							{route.component}
-						</Suspense>
-					}
-				/>
-			))}
-		</>
-	)
+            {mainNavigationRoutes.map((route) => (
+                <Route
+                    key={route.name}
+                    path={route.path}
+                    element={
+                        <Suspense key={route.name} fallback={route.loader}>
+                            {route.component}
+                        </Suspense>
+                    }
+                />
+            ))}
+        </>
+    )
 }

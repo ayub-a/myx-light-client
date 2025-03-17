@@ -4,8 +4,8 @@ import { lazy } from 'react'
 
 // NOT FOR PRODUCTION
 export const CarBrandLazy = lazy(
-	() =>
-		new Promise((resolve) => {
-			setTimeout(() => resolve(import('./CarBrand')), 500)
-		}) as any
+    () =>
+        new Promise((resolve) => {
+            setTimeout(() => resolve(import('./CarBrand')), 500)
+        }) as never
 )

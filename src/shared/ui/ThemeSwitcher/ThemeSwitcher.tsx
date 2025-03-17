@@ -1,7 +1,7 @@
-import { useTheme } from '../../lib/theme'
+// import { useTheme } from '../../lib/theme'
 
 export const ThemeSwitcher = () => {
-	const {} = useTheme()
+    // const {theme, toggleTheme} = useTheme()
 
-	return <div></div>
+    return <div></div>
 }

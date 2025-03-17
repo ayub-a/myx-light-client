@@ -4,8 +4,8 @@ import { lazy } from 'react'
 
 // NOT FOR PRODUCTION
 export const AboutLazy = lazy(
-	() =>
-		new Promise((resolve) => {
-			setTimeout(() => resolve(import('./About')), 1500)
-		}) as any
+    () =>
+        new Promise((resolve) => {
+            setTimeout(() => resolve(import('./About')), 1500)
+        }) as never
 )

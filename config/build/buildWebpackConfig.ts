@@ -7,30 +7,30 @@ import { buildResolvers } from './buildResolvers'
 import { buildDevServer } from './buildDevServer'
 
 export function buildWebpackConfig(config: BuildConfig): Configuration {
-	const { paths, isDev, mode } = config
+    const { paths, isDev, mode } = config
 
-	return {
-		mode,
+    return {
+        mode,
 
-		entry: paths.entry,
+        entry: paths.entry,
 
-		output: {
-			publicPath: '/',
-			filename: '[name].[contenthash:7].js',
-			path: paths.output,
-			clean: true,
-		},
+        output: {
+            publicPath: '/',
+            filename: '[name].[contenthash:7].js',
+            path: paths.output,
+            clean: true,
+        },
 
-		plugins: buildPlugins(config),
+        plugins: buildPlugins(config),
 
-		module: {
-			rules: buildLoaders(config),
-		},
+        module: {
+            rules: buildLoaders(config),
+        },
 
-		resolve: buildResolvers(config),
+        resolve: buildResolvers(config),
 
-		devServer: isDev ? buildDevServer(config) : undefined,
+        devServer: isDev ? buildDevServer(config) : undefined,
 
-		devtool: isDev ? 'inline-source-map' : undefined,
-	}
+        devtool: isDev ? 'inline-source-map' : undefined,
+    }
 }

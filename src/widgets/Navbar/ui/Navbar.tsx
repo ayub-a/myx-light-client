@@ -14,55 +14,60 @@ import { clsnm } from 'shared/lib/classNames'
 import cls from './Navbar.module.scss'
 
 export const Navbar = () => {
-	const { t } = useTranslation()
+    const { t } = useTranslation()
 
-	return (
-		<div className={clsnm(cls.Navbar)}>
-			<div className={cls.top_header}>
-				<div className={cls.container}>
-					<Locale />
+    return (
+        <div className={clsnm(cls.Navbar)}>
+            <div className={cls.top_header}>
+                <div className={cls.container}>
+                    <Locale />
 
-					<Button style='clear' size='s'>
-						<Icon name='shop' />
-						{t('navbar.work-schedule')}, 9:00-18:00
-					</Button>
+                    <Button style="clear" size="s">
+                        <Icon name="shop" />
+                        {t('navbar.work-schedule')}, 9:00-18:00
+                    </Button>
 
-					<div className={cls.extra_items}>
-						<div className={cls.info_nav}>
-							<InfoNavigation />
-						</div>
+                    <div className={cls.extra_items}>
+                        <div className={cls.info_nav}>
+                            <InfoNavigation />
+                        </div>
 
-						<Hint text='Soon' direction='bottom'>
-							<Button style='clear' size='s'>
-								<Icon name='wholesale' />
-								{t('navbar.wholesale')}
-							</Button>
-						</Hint>
+                        <Hint text="Soon" direction="bottom">
+                            <Button style="clear" size="s">
+                                <Icon name="wholesale" />
+                                {t('navbar.wholesale')}
+                            </Button>
+                        </Hint>
 
-						<Hint text='Current Time (Uzbekistan)' direction='bottom'>
-							<LocaleTime />
-						</Hint>
-					</div>
-				</div>
-			</div>
+                        <Hint
+                            text="Current Time (Uzbekistan)"
+                            direction="bottom"
+                        >
+                            <LocaleTime />
+                        </Hint>
+                    </div>
+                </div>
+            </div>
 
-			<div className={cls.bottom_header}>
-				<div className={cls.container}>
-					<CustomLink to='/' className={cls.logo} style='clear'>
-						<img src={LogoPng} alt='logo' />
-						<h1 className={cls.logo_title}>{t('navbar.logo-title')}</h1>
-					</CustomLink>
+            <div className={cls.bottom_header}>
+                <div className={cls.container}>
+                    <CustomLink to="/" className={cls.logo} style="clear">
+                        <img src={LogoPng} alt="logo" />
+                        <h1 className={cls.logo_title}>
+                            {t('navbar.logo-title')}
+                        </h1>
+                    </CustomLink>
 
-					<div className={cls.search_and_nav}>
-						<Button>
-							<Icon name='burger' />
-							{t('navbar.catalog')}
-						</Button>
-						<SearchInput />
-						<MainNavigation />
-					</div>
-				</div>
-			</div>
-		</div>
-	)
+                    <div className={cls.search_and_nav}>
+                        <Button>
+                            <Icon name="burger" />
+                            {t('navbar.catalog')}
+                        </Button>
+                        <SearchInput />
+                        <MainNavigation />
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
 }

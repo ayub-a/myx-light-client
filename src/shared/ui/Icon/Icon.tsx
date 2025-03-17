@@ -36,49 +36,57 @@ import cls from './Icon.module.scss'
 import { memo } from 'react'
 
 const icons = {
-	search,
-	location,
-	language,
-	localeTime,
-	shop,
-	burger,
-	wholesale,
-	arrowRight,
-	notification,
-	cart,
-	user,
-	emptyCategory,
-	favourites,
-	like: favourites,
-	car,
-	completed,
-	boughthisweek,
-	warning,
-	discount,
-	addtocart,
-	info,
-	confirmPromo,
-	close,
-	remove: close,
-	checkout,
-	box,
+    search,
+    location,
+    language,
+    localeTime,
+    shop,
+    burger,
+    wholesale,
+    arrowRight,
+    notification,
+    cart,
+    user,
+    emptyCategory,
+    favourites,
+    like: favourites,
+    car,
+    completed,
+    boughthisweek,
+    warning,
+    discount,
+    addtocart,
+    info,
+    confirmPromo,
+    close,
+    remove: close,
+    checkout,
+    box,
 }
 
 export type Icons = keyof typeof icons
 
 export interface IconProps {
-	name: Icons
-	size?: number
-	color?: string
-	className?: string
+    name: Icons
+    size?: number
+    color?: string
+    className?: string
 }
 
-export const Icon = memo(({ name, size = 19, color = 'currentColor', className }: IconProps) => {
-	const icon = name ? icons[name] : null
+export const Icon = memo((props: IconProps) => {
+    const { name, size = 19, color = 'currentColor', className } = props
 
-	return (
-		<svg className={clsnm(cls.Icon, [className])} data-icon={name} width={size} height={size} fill={color}>
-			<use xlinkHref={`/icons.svg#${icon.id}`} />
-		</svg>
-	)
+    const icon = name ? icons[name] : null
+
+    return (
+        <svg
+            className={clsnm(cls.Icon, [className])}
+            data-icon={name}
+            width={size}
+            height={size}
+            fill={color}
+        >
+            <use xlinkHref={`/icons.svg#${icon.id}`} />
+        </svg>
+    )
 })

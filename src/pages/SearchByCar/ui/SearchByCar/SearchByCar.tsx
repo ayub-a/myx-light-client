@@ -4,21 +4,22 @@ import { Outlet, useLocation, useNavigate } from 'react-router-dom'
 import { PageLayout } from 'shared/ui'
 import { Sidebar } from '../Sidebar/Sidebar'
 
-interface SearchByCarProps {}
+// interface SearchByCarProps {}
 
-export const SearchByCar = (props: SearchByCarProps) => {
-	const navigate = useNavigate()
-	const location = useLocation()
+export const SearchByCar = () => {
+    const navigate = useNavigate()
 
-	useEffect(() => {
-		if (location.pathname === '/searchbycar') {
-			navigate('/searchbycar/brand', { replace: true })
-		}
-	}, [location.pathname])
+    const location = useLocation()
 
-	return (
-		<PageLayout sidebar={<Sidebar />}>
-			<Outlet />
-		</PageLayout>
-	)
+    useEffect(() => {
+        if (location.pathname === '/searchbycar') {
+            navigate('/searchbycar/brand', { replace: true })
+        }
+    }, [location.pathname, navigate])
+
+    return (
+        <PageLayout sidebar={<Sidebar />}>
+            <Outlet />
+        </PageLayout>
+    )
 }

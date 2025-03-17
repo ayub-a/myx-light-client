@@ -7,13 +7,13 @@ import { SearchByCarRoutes } from './ui/SearchByCarRoutes'
 import { Loader } from 'shared/ui'
 
 export const AppRouter = () => {
-	return (
-		<Suspense fallback={<Loader />}>
-			<Routes>
-				{NavigationRoutes()}
-				{CategoryRoutes()}
-				{SearchByCarRoutes()}
-			</Routes>
-		</Suspense>
-	)
+    return (
+        <Suspense fallback={<Loader />}>
+            <Routes>
+                {NavigationRoutes()}
+                {CategoryRoutes()}
+                {SearchByCarRoutes()}
+            </Routes>
+        </Suspense>
+    )
 }

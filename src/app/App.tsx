@@ -7,32 +7,32 @@ import { AppRouter } from './router'
 import './styles/index.scss'
 
 export const App = () => {
-	const { theme } = useTheme()
+    const { theme } = useTheme()
 
-	return (
-		<AppLayout className={clsnm('App', [`theme_${theme}`])}>
-			<AppRouter />
-		</AppLayout>
-	)
+    return (
+        <AppLayout className={clsnm('App', [`theme_${theme}`])}>
+            <AppRouter />
+        </AppLayout>
+    )
 }
 
 {
-	/* <div > */
+    /* <div > */
 }
 
 {
-	/* <MainNavigation /> */
+    /* <MainNavigation /> */
 }
 {
-	/* <CategoryNavigation /> */
-}
-
-{
-	/* <button onClick={toggleTheme}>Theme: {theme}</button> */
+    /* <CategoryNavigation /> */
 }
 
 {
-	/* <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', gap: '10px' }}>
+    /* <button onClick={toggleTheme}>Theme: {theme}</button> */
+}
+
+{
+    /* <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', gap: '10px' }}>
 		<h3>BTN STYLES | Default btn size: M</h3>
 		<div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
 			<Button style='clear'>Clear</Button>
@@ -99,5 +99,5 @@ export const App = () => {
 	</div> */
 }
 {
-	/* </div> */
+    /* </div> */
 }
