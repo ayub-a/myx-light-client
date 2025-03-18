@@ -2,6 +2,7 @@ import { Suspense } from 'react'
 import { Route } from 'react-router-dom'
 
 import { Cart } from 'pages/Cart'
+import { PageNotFound } from 'pages'
 import { Loader } from 'shared/ui'
 
 import { mainNavigationRoutes } from '../config/mainNavigation'
@@ -14,6 +15,15 @@ export const NavigationRoutes = () => {
                 element={
                     <Suspense fallback={<Loader />}>
                         <Cart />
+                    </Suspense>
+                }
+            />
+
+            <Route
+                path="*"
+                element={
+                    <Suspense fallback={<Loader />}>
+                        <PageNotFound />
                     </Suspense>
                 }
             />

@@ -1,3 +1,4 @@
+export { PageNotFound } from './404'
 export { SearchByCar } from './SearchByCar'
 export { CarBodyLazy as CarBody } from './CarBody/CarBody.lazy'
 export { CarModelLazy as CarModel } from './CarModel/CarModel.lazy'
