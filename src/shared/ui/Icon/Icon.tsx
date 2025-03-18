@@ -14,6 +14,7 @@ import confirmPromo from 'shared/assets/icons/confirmPromo.svg'
 import close from 'shared/assets/icons/close.svg'
 import checkout from 'shared/assets/icons/checkout.svg'
 import box from 'shared/assets/icons/box.svg'
+import warningV1 from 'shared/assets/icons/warning-v1.svg'
 
 // badges
 import completed from 'shared/assets/icons/completed.svg'
@@ -54,6 +55,7 @@ const icons = {
     completed,
     boughthisweek,
     warning,
+    warningV1,
     discount,
     addtocart,
     info,

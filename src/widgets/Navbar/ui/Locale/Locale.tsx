@@ -5,6 +5,8 @@ import { Button, Icon } from 'shared/ui'
 import { clsnm } from 'shared/lib/classNames'
 import { LOCAL_STORAGE_LANG_KEY } from 'shared/const/localStorage'
 
+import { TestErrorBoundary } from '../TestErrorBoundary/TestErrorBoundary'
+
 import cls from './Locale.module.scss'
 
 const languages: Record<string, { code: string; lang: string }> = {
@@ -49,6 +51,8 @@ export const Locale = () => {
 
     return (
         <div className={clsnm(cls.Locale)}>
+            <TestErrorBoundary />
+
             <Button style="clear" size="s">
                 <Icon name="location" />
                 <span className={cls.text}>Узбекистан</span>•<span>СУМ</span>
