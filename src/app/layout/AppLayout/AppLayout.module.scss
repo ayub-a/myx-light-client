@@ -1,18 +1,18 @@
 .AppLayout {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 30px;
 }
 
 .container {
-	margin-top: calc(var(--navbar-height) + 30px);
-	padding-bottom: 50px;
-	max-width: var(--main-container-width);
-	width: 100%;
+    margin-top: calc(var(--navbar-height) + 30px);
+    padding-bottom: 50px;
+    max-width: var(--main-container-width);
+    width: 100%;
 
-	@media screen and (max-width: 610px) {
-		padding-left: 15px;
-		padding-right: 15px;
-	}
+    @media screen and (width <= 610px) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }

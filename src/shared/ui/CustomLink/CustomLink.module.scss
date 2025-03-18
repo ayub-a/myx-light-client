@@ -1,16 +1,16 @@
 .CustomLink {
-	display: flex;
-	color: inherit;
+    display: flex;
+    color: inherit;
 
-	&::first-letter {
-		text-transform: capitalize;
-	}
+    &::first-letter {
+        text-transform: capitalize;
+    }
 
-	&.clear {
-		text-decoration: none;
-	}
+    &.clear {
+        text-decoration: none;
+    }
 
-	&.underline {
-		text-decoration: underline;
-	}
+    &.underline {
+        text-decoration: underline;
+    }
 }

@@ -1,90 +1,98 @@
 .AddToCart {
-	display: flex;
-	flex-direction: column;
-	gap: 5px;
-	margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
 }
 
 .flex_wrap {
-	display: flex;
-	gap: 10px;
+    display: flex;
+    gap: 10px;
 }
 
 .button {
-	width: 100%;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .divider {
-	position: relative;
-	display: flex;
-	justify-content: center;
-	color: var(--secondary-color);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    color: var(--secondary-color);
 
-	&::before {
-		content: '';
-		height: 1.5px;
-		background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, var(--secondary-color) 100%);
-		position: absolute;
-		top: 50%;
-		left: 25px;
-		width: 40%;
-	}
+    &::before {
+        content: "";
+        height: 1.5px;
+        background: linear-gradient(
+            90deg,
+            rgb(255 255 255 / 0%) 0%,
+            var(--secondary-color) 100%
+        );
+        position: absolute;
+        top: 50%;
+        left: 25px;
+        width: 40%;
+    }
 
-	&::after {
-		content: '';
-		height: 1.5px;
-		background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, var(--secondary-color) 100%);
-		position: absolute;
-		top: 50%;
-		right: 25px;
-		width: 40%;
-	}
+    &::after {
+        content: "";
+        height: 1.5px;
+        background: linear-gradient(
+            270deg,
+            rgb(255 255 255 / 0%) 0%,
+            var(--secondary-color) 100%
+        );
+        position: absolute;
+        top: 50%;
+        right: 25px;
+        width: 40%;
+    }
 }
 
 .cart_counter {
-	padding: 4px;
-	display: none;
-	justify-content: space-between;
-	width: 150%;
-	border: 1.5px solid #9a9a9a;
-	border-radius: 6px;
-	font-size: 20px;
+    padding: 4px;
+    display: none;
+    justify-content: space-between;
+    width: 150%;
+    border: 1.5px solid #9a9a9a;
+    border-radius: 6px;
+    font-size: 20px;
 
-	.qty_btn {
-		display: flex;
-		justify-content: center;
-		width: 50px;
-		background: #9a9a9a;
-		font-size: 30px;
-		line-height: 23px;
-	}
+    .qty_btn {
+        display: flex;
+        justify-content: center;
+        width: 50px;
+        background: #9a9a9a;
+        font-size: 30px;
+        line-height: 23px;
+    }
 }
 
 .hide {
-	display: none;
+    display: none;
 }
 
 .show_qty {
-	display: flex;
+    display: flex;
 }
 
 .add_to_cart {
-	width: 150%;
+    width: 150%;
 }
 
 .buy_now {
-	font-weight: 500 !important;
+    font-weight: 500 !important;
 }
 
 .uzum_shop {
-	background: #7000ff !important;
+    background: #7000ff !important;
 }
 
 .alif_shop {
-	background: #ffb500 !important;
+    background: #ffb500 !important;
 }

@@ -1,35 +1,35 @@
 .SidebarNavigation {
-	display: flex;
-	flex-direction: column;
-	max-height: 300px;
-	height: 100%;
-	border: 1px solid #bfbfbf;
-	border-radius: 8px;
-	list-style: none;
-	overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    max-height: 300px;
+    height: 100%;
+    border: 1px solid #bfbfbf;
+    border-radius: 8px;
+    list-style: none;
+    overflow: scroll;
 }
 
 .nav_item {
-	width: 100%;
-	border-bottom: 1px solid #bfbfbf;
-	cursor: pointer;
-	text-transform: capitalize !important;
+    width: 100%;
+    border-bottom: 1px solid #bfbfbf;
+    cursor: pointer;
+    text-transform: capitalize !important;
 
-	&:last-child {
-		border-bottom: none;
-	}
+    &:last-child {
+        border-bottom: none;
+    }
 
-	&:hover {
-		background-color: var(--primary-color);
-		color: #fff;
-	}
+    &:hover {
+        background-color: var(--primary-color);
+        color: #fff;
+    }
 
-	.link {
-		padding: 13px 20px;
-	}
+    .link {
+        padding: 13px 20px;
+    }
 }
 
 .active {
-	background-color: var(--primary-color);
-	color: #fff !important;
+    background-color: var(--primary-color);
+    color: #fff !important;
 }

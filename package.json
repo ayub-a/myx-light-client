@@ -7,8 +7,10 @@
 		"build:dev": "webpack --env mode=development",
 		"build:analyzer": "webpack --env mode=production analyzer",
 		"start": "webpack serve --env port=3000",
-		"lint": "npx eslint",
-		"lint:fix": "npx eslint --fix"
+		"lint:ts": "npx eslint",
+		"lint:ts:fix": "npx eslint --fix",
+		"lint:scss": "npx stylelint '**/*.scss'",
+		"lint:scss:fix": "npx stylelint --fix '**/*.scss'"
 	},
 	"author": "",
 	"license": "ISC",
@@ -43,6 +45,9 @@
 		"sass": "^1.83.4",
 		"sass-loader": "^16.0.4",
 		"style-loader": "^4.0.0",
+		"stylelint": "^16.16.0",
+		"stylelint-config-standard-scss": "^14.0.0",
+		"stylelint-prettier": "^5.0.3",
 		"svg-sprite-loader": "^6.0.11",
 		"ts-loader": "^9.5.2",
 		"ts-node": "^10.9.2",

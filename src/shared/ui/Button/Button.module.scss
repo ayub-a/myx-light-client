@@ -1,62 +1,62 @@
 .Button {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 6px;
-	cursor: pointer;
-	color: inherit;
-	border: none;
-	background: none;
-	padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    cursor: pointer;
+    color: inherit;
+    border: none;
+    background: none;
+    padding: 5px 10px;
 
-	&.disabled {
-		opacity: 0.6;
-		cursor: not-allowed;
-	}
+    &.disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
 
-	// BTN SIZE
-	&.s {
-		font: var(--font-s);
-	}
+    // BTN SIZE
+    &.s {
+        font: var(--font-s);
+    }
 
-	&.m {
-		font: var(--font-m);
-	}
+    &.m {
+        font: var(--font-m);
+    }
 
-	&.l {
-		font: var(--font-l);
-	}
+    &.l {
+        font: var(--font-l);
+    }
 
-	// STYLE
-	&.clear {
-		border: 2px solid transparent;
-		padding: 0;
-		background: none;
-	}
+    // STYLE
+    &.clear {
+        border: 2px solid transparent;
+        padding: 0;
+        background: none;
+    }
 
-	&.rounded {
-		border: 2px solid transparent;
-		border-radius: 6px;
-		background-color: var(--primary-color);
-		color: #fff;
-	}
+    &.rounded {
+        border: 2px solid transparent;
+        border-radius: 6px;
+        background-color: var(--primary-color);
+        color: #fff;
+    }
 
-	&.square {
-		border: 2px solid transparent;
-		border-radius: 0;
-		background-color: var(--primary-color);
-		color: #fff;
-	}
+    &.square {
+        border: 2px solid transparent;
+        border-radius: 0;
+        background-color: var(--primary-color);
+        color: #fff;
+    }
 
-	&.outline-rounded {
-		border: 2px solid var(--primary-color);
-		border-radius: 5px;
-		color: var(--primary-color);
-	}
+    &.outline-rounded {
+        border: 2px solid var(--primary-color);
+        border-radius: 5px;
+        color: var(--primary-color);
+    }
 
-	&.outline-square {
-		border: 2px solid var(--primary-color);
-		border-radius: 0;
-		color: var(--primary-color);
-	}
+    &.outline-square {
+        border: 2px solid var(--primary-color);
+        border-radius: 0;
+        color: var(--primary-color);
+    }
 }

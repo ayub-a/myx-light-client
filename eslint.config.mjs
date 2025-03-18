@@ -10,6 +10,7 @@ export default [
     // JS rules
     {
         files: ['**/*.{js,ts,tsx}'],
+        ignores: ['node_modules', 'public', 'build'],
         languageOptions: {
             ecmaVersion: 'latest',
             sourceType: 'module',
