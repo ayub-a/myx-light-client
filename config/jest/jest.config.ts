@@ -3,6 +3,7 @@
  * https://jestjs.io/docs/configuration
  */
 
+import path from 'path'
 import type { Config } from 'jest'
 
 const config: Config = {
@@ -15,17 +16,29 @@ const config: Config = {
     // The directory where Jest should store its cached dependency information
     // cacheDirectory: "/private/var/folders/jk/3jxy0p7n4w76hsp5qzv_my8h0000gn/T/jest_dx",
 
+    rootDir: '../../',
+
     clearMocks: true,
     testEnvironment: 'jsdom',
-    coveragePathIgnorePatterns: ['/node_modules/'],
-    moduleDirectories: ['node_modules'],
-    moduleFileExtensions: ['js', 'ts', 'tsx'],
 
-    // The root directory that Jest should scan for tests and modules within
-    rootDir: '../../',
+    coveragePathIgnorePatterns: ['/node_modules/'],
+
+    moduleDirectories: ['node_modules'],
+
+    modulePaths: ['<rootDir>src'],
+
+    moduleFileExtensions: ['js', 'ts', 'tsx'],
 
     // The glob patterns Jest uses to detect test files
     testMatch: ['<rootDir>src/**/*(*.)@(spec|test).(ts|tsx)'],
+
+    setupFilesAfterEnv: ['<rootDir>config/jest/jest-setup.ts'],
+
+    // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
+    moduleNameMapper: {
+        '\\.scss$': 'identity-obj-proxy',
+        '\\.(svg|png)$': path.resolve(__dirname, '__mocks__', 'styleMock.ts'),
+    },
 
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,
@@ -71,15 +84,14 @@ const config: Config = {
     // globalTeardown: undefined,
 
     // A set of global variables that need to be available in all test environments
-    // globals: {},
+    globals: {
+        __IS_DEV__: true,
+    },
 
     // The maximum amount of workers used to run your tests. Can be specified as % or a number. E.g. maxWorkers: 10% will use 10% of your CPU amount + 1 as the maximum worker number. maxWorkers: 2 will use a maximum of 2 workers.
     // maxWorkers: "50%",
 
     // An array of directory names to be searched recursively up from the requiring module's location
-
-    // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
-    // moduleNameMapper: {},
 
     // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
     // modulePathIgnorePatterns: [],

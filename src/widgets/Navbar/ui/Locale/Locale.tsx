@@ -60,6 +60,7 @@ export const Locale = () => {
 
             <div className={cls.language_section}>
                 <Button
+                    data-testid="lang-toggle"
                     ref={langButtonRef}
                     style="clear"
                     size="s"
@@ -72,6 +73,7 @@ export const Locale = () => {
                 </Button>
 
                 <ul
+                    data-testid="lang-list"
                     className={clsnm(cls.language_list, [], {
                         [cls.show_lang_list]: showLangList,
                     })}

@@ -17,7 +17,7 @@ export const Navbar = () => {
     const { t } = useTranslation()
 
     return (
-        <div className={clsnm(cls.Navbar)}>
+        <div className={clsnm(cls.Navbar)} data-testid="navbar">
             <div className={cls.top_header}>
                 <div className={cls.container}>
                     <Locale />
