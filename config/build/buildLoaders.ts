@@ -4,8 +4,8 @@ import { BuildConfig } from './types'
 
 export function buildLoaders({ isDev }: BuildConfig): RuleSetRule[] {
     const fileLoader = {
-        test: /\.png$/,
-        use: ['file-loader'],
+        test: /\.(png|jpe?g)$/i,
+        type: 'asset/resource', // Webpack 5 встроенный loader для файлов
     }
 
     const svgSpriteLoader = {

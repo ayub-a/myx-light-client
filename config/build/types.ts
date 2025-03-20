@@ -16,7 +16,7 @@ export interface BuildPaths {
 export interface BuildConfig {
     paths: BuildPaths
     isDev: boolean
-    mode: ModeOptions
-    port: number
-    analyzer: boolean
+    mode?: ModeOptions
+    port?: number
+    analyzer?: boolean
 }
