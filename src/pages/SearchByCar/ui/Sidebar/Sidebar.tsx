@@ -21,9 +21,7 @@ export const Sidebar = () => {
         <div className={clsnm(cls.Sidebar)}>
             <div className={cls.title_block}>
                 <h3 className={cls.title}>Подбор ламп по авто</h3>
-                <span className={cls.short_info}>
-                    3 шага к обновлению освещения вашего автомобиля
-                </span>
+                <span className={cls.short_info}>3 шага к обновлению освещения вашего автомобиля</span>
             </div>
 
             <div className={cls.stage_status}>
@@ -33,9 +31,7 @@ export const Sidebar = () => {
                     })}
                 >
                     <div className={cls.stage_round}>1</div>
-                    <h3 className={cls.stage_title}>
-                        {params.brand ? params.brand : 'Бренд'}
-                    </h3>
+                    <h3 className={cls.stage_title}>{params.brand ? params.brand : 'Бренд'}</h3>
                 </div>
 
                 <span
@@ -50,9 +46,7 @@ export const Sidebar = () => {
                     })}
                 >
                     <div className={cls.stage_round}>2</div>
-                    <h3 className={cls.stage_title}>
-                        {params.model ? params.model : 'Модель'}
-                    </h3>
+                    <h3 className={cls.stage_title}>{params.model ? params.model : 'Модель'}</h3>
                 </div>
 
                 <span
@@ -67,11 +61,7 @@ export const Sidebar = () => {
                     })}
                 >
                     <div className={cls.stage_round}>3</div>
-                    <h3 className={cls.stage_title}>
-                        {params.body
-                            ? `${params.body}, gen ${params.gen}`
-                            : 'Кузов'}
-                    </h3>
+                    <h3 className={cls.stage_title}>{params.body ? `${params.body}, gen ${params.gen}` : 'Кузов'}</h3>
                 </div>
             </div>
         </div>

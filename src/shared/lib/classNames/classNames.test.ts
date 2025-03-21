@@ -13,9 +13,7 @@ describe('classNames / clsnm', () => {
     test('all params', () => {
         const expected = 'main cls1 cls2 cls4'
 
-        expect(
-            clsnm('main', ['cls1', 'cls2'], { cls3: false, cls4: true })
-        ).toBe(expected)
+        expect(clsnm('main', ['cls1', 'cls2'], { cls3: false, cls4: true })).toBe(expected)
     })
 
     test('empty params', () => {

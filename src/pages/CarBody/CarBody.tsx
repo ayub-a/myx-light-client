@@ -43,34 +43,22 @@ const CarBody = () => {
                         <div className={cls.substrate}>
                             <div className={cls.body_header}>
                                 <div className={cls.body_type}>Хетчбек</div>
-                                <Icon
-                                    name="info"
-                                    size={25}
-                                    className={cls.info_icon}
-                                />
+                                <Icon name="info" size={25} className={cls.info_icon} />
                             </div>
 
                             <ul className={cls.about_car_list}>
                                 {aboutCar.map((car, i) => (
                                     <li key={i} className={cls.about_item}>
-                                        <div className={cls.title}>
-                                            {car[0]}
-                                        </div>
+                                        <div className={cls.title}>{car[0]}</div>
                                         <span className={cls.divider}></span>
-                                        <div className={cls.value}>
-                                            {car[1]}
-                                        </div>
+                                        <div className={cls.value}>{car[1]}</div>
                                     </li>
                                 ))}
                             </ul>
 
                             <div className={cls.car_img}>
                                 {i % 2 === 1 ? (
-                                    <img
-                                        src={coveredCar}
-                                        className={cls.covered_car}
-                                        alt="covered-car"
-                                    />
+                                    <img src={coveredCar} className={cls.covered_car} alt="covered-car" />
                                 ) : (
                                     <img src={audiCar} alt="audi" />
                                 )}

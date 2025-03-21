@@ -15,9 +15,7 @@ interface RouteConfig {
     path: (typeof mainNavigationPaths)[MainNavigationRoutes]
 }
 
-export const mainNavigationLinks: RouteConfig[] = Object.values(
-    MainNavigationRoutes
-).map((route) => ({
+export const mainNavigationLinks: RouteConfig[] = Object.values(MainNavigationRoutes).map((route) => ({
     name: route,
     path: mainNavigationPaths[route],
 }))

@@ -5,8 +5,7 @@ import { LOCAL_STORAGE_THEME_KEY } from '../../const/localStorage'
 import { ThemeContext } from './ThemeContext'
 import { Theme } from './types'
 
-const defaultTheme =
-    (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT
+const defaultTheme = (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT
 
 export const ThemeProvider = ({ children }: PropsWithChildren) => {
     const [theme, setTheme] = useState(defaultTheme)
@@ -19,9 +18,5 @@ export const ThemeProvider = ({ children }: PropsWithChildren) => {
         [theme]
     )
 
-    return (
-        <ThemeContext.Provider value={defaultProps}>
-            {children}
-        </ThemeContext.Provider>
-    )
+    return <ThemeContext.Provider value={defaultProps}>{children}</ThemeContext.Provider>
 }

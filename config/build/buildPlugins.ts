@@ -1,8 +1,4 @@
-import {
-    DefinePlugin,
-    HotModuleReplacementPlugin,
-    WebpackPluginInstance,
-} from 'webpack'
+import { DefinePlugin, HotModuleReplacementPlugin, WebpackPluginInstance } from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
@@ -13,11 +9,7 @@ import SpriteLoaderPlugin from 'svg-sprite-loader/plugin'
 
 import { BuildConfig } from './types'
 
-export function buildPlugins({
-    paths,
-    analyzer,
-    isDev,
-}: BuildConfig): WebpackPluginInstance[] {
+export function buildPlugins({ paths, analyzer, isDev }: BuildConfig): WebpackPluginInstance[] {
     return [
         new ReactRefreshPlugin(),
         new HotModuleReplacementPlugin(),

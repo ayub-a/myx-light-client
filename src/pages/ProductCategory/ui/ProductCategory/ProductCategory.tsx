@@ -18,18 +18,16 @@ const ProductCategory = () => {
 
             <div className={cls.content}>
                 <GridLayout col={3}>
-                    {new Array(9)
-                        .fill({ price: 45900, discount: 20 })
-                        .map((el, index) => (
-                            <CustomLink
-                                style="clear"
-                                className={cls.custom_link}
-                                key={index}
-                                to={`${pathname}/${index + 1}`}
-                            >
-                                <ProductCategoryItem product={el} />
-                            </CustomLink>
-                        ))}
+                    {new Array(9).fill({ price: 45900, discount: 20 }).map((el, index) => (
+                        <CustomLink
+                            style="clear"
+                            className={cls.custom_link}
+                            key={index}
+                            to={`${pathname}/${index + 1}`}
+                        >
+                            <ProductCategoryItem product={el} />
+                        </CustomLink>
+                    ))}
                 </GridLayout>
             </div>
         </PageLayout>

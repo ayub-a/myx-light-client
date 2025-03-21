@@ -10,10 +10,7 @@ import { Loader } from 'shared/ui'
 export const CategoryRoutes = () => {
     return (
         <>
-            <Route
-                path="category"
-                element={<Navigate to="/category/adapters" replace />}
-            />
+            <Route path="category" element={<Navigate to="/category/adapters" replace />} />
             <Route
                 path="category/:category"
                 element={

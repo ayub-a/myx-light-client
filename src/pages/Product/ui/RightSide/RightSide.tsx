@@ -112,19 +112,13 @@ export const RightSide = () => {
             <div className={cls.umbrella}></div>
 
             <div className={cls.mini_nav}>
-                <span>
-                    {location.pathname.split('/').filter(Boolean).join(' > ')}
-                </span>
+                <span>{location.pathname.split('/').filter(Boolean).join(' > ')}</span>
             </div>
 
             <div className={cls.flex_wrap}>
                 <div className={cls.flex_wrap_col}>
-                    <h3 className={cls.product_title}>
-                        Габариты MYX C5W, 3014, 12V, 3W, Canbus, 2шт.
-                    </h3>
-                    <span className={cls.product_id}>
-                        Артикул: MYX0202301441
-                    </span>
+                    <h3 className={cls.product_title}>Габариты MYX C5W, 3014, 12V, 3W, Canbus, 2шт.</h3>
+                    <span className={cls.product_id}>Артикул: MYX0202301441</span>
                 </div>
                 <div className={cls.favourite_btn}>
                     <Icon name="like" size={33} />
@@ -135,18 +129,9 @@ export const RightSide = () => {
 
             <Badges currentSize={currentSize} />
 
-            <Size
-                sizes={sizes}
-                currentSize={currentSize}
-                setCurrentSize={currentSizeHandler}
-                cart={cart}
-            />
+            <Size sizes={sizes} currentSize={currentSize} setCurrentSize={currentSizeHandler} cart={cart} />
 
-            <AddToCart
-                currentSize={currentSize}
-                cart={cart}
-                changeCart={changeCart}
-            />
+            <AddToCart currentSize={currentSize} cart={cart} changeCart={changeCart} />
 
             <About about={about} />
         </div>

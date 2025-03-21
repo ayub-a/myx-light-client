@@ -51,17 +51,11 @@ const Cart = () => {
     const [selected, setSelected] = useState<Product[]>([])
 
     const changeCartHandler = useCallback((updatedProduct: Product) => {
-        setCart((prev) =>
-            prev.map((item) =>
-                item.id === updatedProduct.id ? updatedProduct : item
-            )
-        )
+        setCart((prev) => prev.map((item) => (item.id === updatedProduct.id ? updatedProduct : item)))
 
         setSelected((prev) =>
             prev.some((item) => item.id === updatedProduct.id)
-                ? prev.map((item) =>
-                      item.id === updatedProduct.id ? updatedProduct : item
-                  )
+                ? prev.map((item) => (item.id === updatedProduct.id ? updatedProduct : item))
                 : prev
         )
     }, [])
@@ -105,19 +99,12 @@ const Cart = () => {
                     <div className={cls.cart_nav_el}>
                         <input
                             type="checkbox"
-                            checked={
-                                selected.length
-                                    ? cart.length === selected.length
-                                    : false
-                            }
+                            checked={selected.length ? cart.length === selected.length : false}
                             onChange={() => toggleSelectHandler()}
                         />
                         <span>Выбрать все</span>
                     </div>
-                    <div
-                        className={cls.cart_nav_el}
-                        onClick={removeAllSelected}
-                    >
+                    <div className={cls.cart_nav_el} onClick={removeAllSelected}>
                         <Icon name="remove" size={24} />
                         <span>Удалить выбранные</span>
                     </div>

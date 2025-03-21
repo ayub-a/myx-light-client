@@ -45,9 +45,7 @@ export const Sidebar = () => {
                         <li key={i} className={cls.about_item}>
                             <div className={cls.title}>{car[0]}</div>
                             <span className={cls.divider}></span>
-                            <div className={cls.value}>
-                                {car[1] ? car[1] : gen}
-                            </div>
+                            <div className={cls.value}>{car[1] ? car[1] : gen}</div>
                         </li>
                     ))}
                 </ul>

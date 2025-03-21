@@ -19,35 +19,15 @@ const Home = () => {
             <div className={clsnm(cls.Home)}>
                 <GridLayout>
                     {categoryLinks.map((item) => (
-                        <CustomLink
-                            to={item.path}
-                            style="clear"
-                            key={item.name}
-                            className={cls.category_item}
-                        >
-                            <h3 className={cls.category_title}>
-                                {t(`categories.${item.name}`)}
-                            </h3>
-                            <img
-                                src={catgoryItemPng}
-                                alt={item.name}
-                                className={cls.category_img}
-                            />
+                        <CustomLink to={item.path} style="clear" key={item.name} className={cls.category_item}>
+                            <h3 className={cls.category_title}>{t(`categories.${item.name}`)}</h3>
+                            <img src={catgoryItemPng} alt={item.name} className={cls.category_img} />
                         </CustomLink>
                     ))}
                     {new Array(5).fill('test test').map((item, i) => (
-                        <CustomLink
-                            to="#"
-                            style="clear"
-                            key={i}
-                            className={cls.category_item}
-                        >
+                        <CustomLink to="#" style="clear" key={i} className={cls.category_item}>
                             <h3 className={cls.category_title}>{item}</h3>
-                            <img
-                                src={emptyCategory}
-                                alt="Test"
-                                className={cls.category_icon}
-                            />
+                            <img src={emptyCategory} alt="Test" className={cls.category_icon} />
                         </CustomLink>
                     ))}
                 </GridLayout>

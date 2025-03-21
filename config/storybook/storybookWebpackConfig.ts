@@ -21,11 +21,7 @@ export const storybookWebpackConfig = (config: Configuration, configType) => {
 
     if (config.module?.rules) {
         config.module.rules = config.module.rules.map((rule) => {
-            if (
-                rule &&
-                typeof rule !== 'string' &&
-                rule.test?.toString().includes('svg')
-            ) {
+            if (rule && typeof rule !== 'string' && rule.test?.toString().includes('svg')) {
                 return { ...rule, exclude: /\.svg$/ }
             }
 

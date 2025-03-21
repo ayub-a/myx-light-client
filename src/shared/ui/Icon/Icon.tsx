@@ -81,13 +81,7 @@ export const Icon = memo((props: IconProps) => {
     const icon = name ? icons[name] : null
 
     return (
-        <svg
-            className={clsnm(cls.Icon, [className])}
-            data-icon={name}
-            width={size}
-            height={size}
-            fill={color}
-        >
+        <svg className={clsnm(cls.Icon, [className])} data-icon={name} width={size} height={size} fill={color}>
             <use xlinkHref={`/icons.svg#${icon.id}`} />
         </svg>
     )

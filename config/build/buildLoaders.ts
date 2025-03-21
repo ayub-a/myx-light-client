@@ -31,9 +31,7 @@ export function buildLoaders({ isDev }: BuildConfig): RuleSetRule[] {
                 options: {
                     modules: {
                         auto: /\.module\.scss/,
-                        localIdentName: isDev
-                            ? '[path][name]__[local]--[hash:base64:5]'
-                            : '[hash:base64:5]',
+                        localIdentName: isDev ? '[path][name]__[local]--[hash:base64:5]' : '[hash:base64:5]',
                         namedExport: false,
                         exportLocalsConvention: 'dashes',
                     },

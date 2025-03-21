@@ -7,20 +7,7 @@ import { GridLayout } from 'shared/ui'
 
 // interface CarModelProps {}
 
-const models = [
-    'A1',
-    'A3',
-    'A4',
-    'A5',
-    'A6',
-    'A7',
-    'A8',
-    'Q3',
-    'Q5',
-    'Q7',
-    'Q8',
-    'TT',
-]
+const models = ['A1', 'A3', 'A4', 'A5', 'A6', 'A7', 'A8', 'Q3', 'Q5', 'Q7', 'Q8', 'TT']
 
 const CarModel = () => {
     const navigate = useNavigate()

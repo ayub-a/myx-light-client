@@ -9,11 +9,7 @@ interface ButtonLinkProps extends ButtonProps {
     to: string
 }
 
-export const ButtonLink = ({
-    children,
-    to,
-    ...others
-}: PropsWithChildren<ButtonLinkProps>) => {
+export const ButtonLink = ({ children, to, ...others }: PropsWithChildren<ButtonLinkProps>) => {
     return (
         <CustomLink to={to} className={cls.CustomLink} style="clear">
             <Button className={cls.Button} {...others}>

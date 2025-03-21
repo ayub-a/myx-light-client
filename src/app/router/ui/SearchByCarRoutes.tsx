@@ -26,10 +26,7 @@ export const SearchByCarRoutes = () => {
             <Route
                 path={searchByCarResulRoute.path}
                 element={
-                    <Suspense
-                        key={searchByCarResulRoute.name}
-                        fallback={searchByCarResulRoute.loader}
-                    >
+                    <Suspense key={searchByCarResulRoute.name} fallback={searchByCarResulRoute.loader}>
                         <SearchByCarResult />
                     </Suspense>
                 }

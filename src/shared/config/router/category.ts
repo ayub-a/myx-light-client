@@ -19,9 +19,7 @@ interface RouteConfig {
     path: (typeof categoryRoutePaths)[CategoryRoutes]
 }
 
-export const categoryLinks: RouteConfig[] = Object.values(CategoryRoutes).map(
-    (route) => ({
-        name: route,
-        path: categoryRoutePaths[route],
-    })
-)
+export const categoryLinks: RouteConfig[] = Object.values(CategoryRoutes).map((route) => ({
+    name: route,
+    path: categoryRoutePaths[route],
+}))

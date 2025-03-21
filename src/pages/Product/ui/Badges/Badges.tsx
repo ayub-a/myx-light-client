@@ -40,20 +40,14 @@ export const Badges = ({ currentSize }: PropsWithChildren<BadgesProps>) => {
 
             <li data-badge-type={'boughthisweek'} className={cls.badge_item}>
                 <Icon name="boughthisweek" size={22} />
-                <span>
-                    {currentSize.boughthisweek} человек купили на этой неделе
-                </span>
+                <span>{currentSize.boughthisweek} человек купили на этой неделе</span>
             </li>
 
             <li data-badge-type={'car'} className={cls.badge_item}>
                 <Icon name="car" size={22} />
 
                 {currentSize.cars.map(({ car, link }, i) => (
-                    <CustomLink
-                        to={link}
-                        style="underline"
-                        key={`${i}-${link}`}
-                    >
+                    <CustomLink to={link} style="underline" key={`${i}-${link}`}>
                         {car}
                         <span className={cls.comma}>,</span>
                     </CustomLink>

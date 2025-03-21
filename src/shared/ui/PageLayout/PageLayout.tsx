@@ -9,10 +9,7 @@ interface PageLayoutProps {
     loader?: ReactNode
 }
 
-export const PageLayout = ({
-    children,
-    sidebar,
-}: PropsWithChildren<PageLayoutProps>) => {
+export const PageLayout = ({ children, sidebar }: PropsWithChildren<PageLayoutProps>) => {
     return (
         <div className={clsnm(cls.PageLayout)}>
             <div className={cls.content}>

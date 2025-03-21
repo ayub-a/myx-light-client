@@ -21,8 +21,7 @@ const config: StorybookConfig = {
         reactDocgenTypescriptOptions: {},
     },
 
-    webpackFinal: async (config, { configType }) =>
-        storybookWebpackConfig(config, configType),
+    webpackFinal: async (config, { configType }) => storybookWebpackConfig(config, configType),
 }
 
 export default config

@@ -14,11 +14,7 @@ export const Sidebar = () => {
 
     return (
         <div className={clsnm(cls.Sidebar, [], {})}>
-            <SidebarNavigation
-                data={categoryLinks}
-                changeCategory={setCategory}
-                currentCategory={category}
-            />
+            <SidebarNavigation data={categoryLinks} changeCategory={setCategory} currentCategory={category} />
         </div>
     )
 }

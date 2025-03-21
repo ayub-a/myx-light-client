@@ -79,11 +79,7 @@ const CarBrand = () => {
 
             <GridLayout>
                 {brands.map(({ name, icon }) => (
-                    <div
-                        key={name}
-                        className={cls.brand_item}
-                        onClick={() => handleBrandSelect(name)}
-                    >
+                    <div key={name} className={cls.brand_item} onClick={() => handleBrandSelect(name)}>
                         <img src={icon} alt="car brand" />
                     </div>
                 ))}

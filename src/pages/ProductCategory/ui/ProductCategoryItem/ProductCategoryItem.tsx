@@ -15,9 +15,7 @@ interface ProductCategoryItemProps {
     }
 }
 
-export const ProductCategoryItem = ({
-    product,
-}: PropsWithChildren<ProductCategoryItemProps>) => {
+export const ProductCategoryItem = ({ product }: PropsWithChildren<ProductCategoryItemProps>) => {
     return (
         <div
             className={clsnm(cls.ProductCategoryItem, [], {
@@ -40,27 +38,18 @@ export const ProductCategoryItem = ({
             </div>
 
             <div className={cls.product_about}>
-                <h3 className={cls.product_title}>
-                    Габариты MYX T10, 16SMD, 2шт.
-                </h3>
+                <h3 className={cls.product_title}>Габариты MYX T10, 16SMD, 2шт.</h3>
                 <div className={cls.product_id}>Артикул: MYX020116</div>
 
                 {product.price ? (
                     <div className={cls.product_price_wrap}>
                         {product.discount ? (
                             <div className={cls.product_price_with_discount}>
-                                {priceFormatter.defaultPrice(
-                                    product.price,
-                                    'SUM'
-                                )}
+                                {priceFormatter.defaultPrice(product.price, 'SUM')}
                             </div>
                         ) : null}
                         <div className={cls.product_price}>
-                            {priceFormatter.priceWithDiscount(
-                                product.price,
-                                20,
-                                'SUM'
-                            )}
+                            {priceFormatter.priceWithDiscount(product.price, 20, 'SUM')}
                         </div>
                     </div>
                 ) : (

@@ -14,8 +14,7 @@ const languages: Record<string, { code: string; lang: string }> = {
     en: { code: 'en', lang: 'English' },
 }
 
-const initialLanguage =
-    localStorage.getItem(LOCAL_STORAGE_LANG_KEY) || languages.ru.code
+const initialLanguage = localStorage.getItem(LOCAL_STORAGE_LANG_KEY) || languages.ru.code
 
 export const Locale = () => {
     const { i18n } = useTranslation()
@@ -32,10 +31,7 @@ export const Locale = () => {
     }
 
     const clickOutside = (e: MouseEvent) => {
-        if (
-            langButtonRef.current &&
-            !langButtonRef.current.contains(e.target as Node)
-        ) {
+        if (langButtonRef.current && !langButtonRef.current.contains(e.target as Node)) {
             setShowLangList(false)
         }
     }
@@ -67,9 +63,7 @@ export const Locale = () => {
                     onClick={() => setShowLangList((prev) => !prev)}
                 >
                     <Icon name="language" />
-                    <span className={cls.text}>
-                        {languages[currentLang].lang}
-                    </span>
+                    <span className={cls.text}>{languages[currentLang].lang}</span>
                 </Button>
 
                 <ul
@@ -82,9 +76,7 @@ export const Locale = () => {
                         <li
                             key={code}
                             onClick={() => changeLanguage(code)}
-                            className={
-                                currentLang === code ? cls.active_lang : ''
-                            }
+                            className={currentLang === code ? cls.active_lang : ''}
                         >
                             {lang}
                         </li>

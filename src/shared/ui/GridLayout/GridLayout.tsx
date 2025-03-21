@@ -8,13 +8,6 @@ interface GridLayoutProps {
     col?: 3 | 4
 }
 
-export const GridLayout = ({
-    children,
-    col = 4,
-}: PropsWithChildren<GridLayoutProps>) => {
-    return (
-        <div className={clsnm(cls.GridLayout, [cls[`col-${col}`]])}>
-            {children}
-        </div>
-    )
+export const GridLayout = ({ children, col = 4 }: PropsWithChildren<GridLayoutProps>) => {
+    return <div className={clsnm(cls.GridLayout, [cls[`col-${col}`]])}>{children}</div>
 }

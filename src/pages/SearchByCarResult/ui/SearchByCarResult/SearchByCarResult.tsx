@@ -182,10 +182,7 @@ const SearchByCarResult = () => {
                             <ul className={cls.lamp_categories}>
                                 {el.lights.map((category) => (
                                     <li key={category.link}>
-                                        <CustomLink
-                                            to={category.link}
-                                            style="underline"
-                                        >
+                                        <CustomLink to={category.link} style="underline">
                                             {category.name}
                                         </CustomLink>
                                     </li>

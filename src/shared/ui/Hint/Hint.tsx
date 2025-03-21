@@ -10,12 +10,7 @@ interface HintProps {
     direction?: 'top' | 'bottom'
 }
 
-export const Hint = ({
-    text,
-    direction = 'top',
-    className,
-    children,
-}: PropsWithChildren<HintProps>) => {
+export const Hint = ({ text, direction = 'top', className, children }: PropsWithChildren<HintProps>) => {
     return (
         <div className={cls.hint_wrap}>
             {text ? (

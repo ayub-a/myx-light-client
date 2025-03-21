@@ -5,10 +5,7 @@ import { clsnm } from 'shared/lib/classNames'
 
 import cls from './Input.module.scss'
 
-type HtmlInputProps = Pick<
-    InputHTMLAttributes<HTMLInputElement>,
-    'value' | 'type' | 'className' | 'placeholder'
->
+type HtmlInputProps = Pick<InputHTMLAttributes<HTMLInputElement>, 'value' | 'type' | 'className' | 'placeholder'>
 
 interface InputProps extends HtmlInputProps {
     onChange?: (value: string) => void
@@ -24,12 +21,7 @@ export const Input = (props: PropsWithChildren<InputProps>) => {
 
     return (
         <div className={clsnm(cls.Input, [], { [cls.icon]: icon })}>
-            <input
-                onChange={changeHandler}
-                type={type}
-                value={value}
-                {...otherProps}
-            />
+            <input onChange={changeHandler} type={type} value={value} {...otherProps} />
             {icon ? <Icon name="search" /> : null}
         </div>
     )

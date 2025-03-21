@@ -20,12 +20,7 @@ export const Sidebar = (props: PropsWithChildren<SidebarProps>) => {
 
     const getTotalPrice = () => {
         const total = selected.reduce((acc, { price, discount, qty }) => {
-            const res =
-                discount > 0
-                    ? Number(
-                          priceFormatter.priceWithDiscount(price, discount)
-                      ) * qty
-                    : price * qty
+            const res = discount > 0 ? Number(priceFormatter.priceWithDiscount(price, discount)) * qty : price * qty
             acc += res
             return acc
         }, 0)

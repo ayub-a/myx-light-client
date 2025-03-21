@@ -39,10 +39,7 @@ export const Navbar = () => {
                             </Button>
                         </Hint>
 
-                        <Hint
-                            text="Current Time (Uzbekistan)"
-                            direction="bottom"
-                        >
+                        <Hint text="Current Time (Uzbekistan)" direction="bottom">
                             <LocaleTime />
                         </Hint>
                     </div>
@@ -53,9 +50,7 @@ export const Navbar = () => {
                 <div className={cls.container}>
                     <CustomLink to="/" className={cls.logo} style="clear">
                         <img src={LogoPng} alt="logo" />
-                        <h1 className={cls.logo_title}>
-                            {t('navbar.logo-title')}
-                        </h1>
+                        <h1 className={cls.logo_title}>{t('navbar.logo-title')}</h1>
                     </CustomLink>
 
                     <div className={cls.search_and_nav}>

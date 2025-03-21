@@ -12,9 +12,7 @@ interface SidebarNavigationProps {
     currentCategory: string
 }
 
-export const SidebarNavigation = (
-    props: PropsWithChildren<SidebarNavigationProps>
-) => {
+export const SidebarNavigation = (props: PropsWithChildren<SidebarNavigationProps>) => {
     const { data, changeCategory, currentCategory } = props
 
     const categoryHandler = (category: string) => {

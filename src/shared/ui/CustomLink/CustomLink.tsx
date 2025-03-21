@@ -11,17 +11,9 @@ interface CustomLinkProps {
     className?: string
 }
 
-export const CustomLink = ({
-    to,
-    children,
-    style = 'underline',
-    className,
-}: PropsWithChildren<CustomLinkProps>) => {
+export const CustomLink = ({ to, children, style = 'underline', className }: PropsWithChildren<CustomLinkProps>) => {
     return (
-        <Link
-            to={to}
-            className={clsnm(cls.CustomLink, [cls[style], className])}
-        >
+        <Link to={to} className={clsnm(cls.CustomLink, [cls[style], className])}>
             {children}
         </Link>
     )
