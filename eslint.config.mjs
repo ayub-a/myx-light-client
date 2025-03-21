@@ -6,11 +6,14 @@ import prettierConfig from 'eslint-config-prettier'
 import reactPlugin from 'eslint-plugin-react'
 import reactHooks from 'eslint-plugin-react-hooks'
 
+const files = ['**/*.{mjs,js,ts,tsx}']
+const ignores = ['node_modules', 'public', 'build']
+
 export default [
     // JS rules
     {
-        files: ['**/*.{js,ts,tsx}'],
-        ignores: ['node_modules', 'public', 'build'],
+        files,
+        ignores,
         languageOptions: {
             ecmaVersion: 'latest',
             sourceType: 'module',
@@ -28,7 +31,8 @@ export default [
     },
     // TS rules
     {
-        files: ['**/*.ts', '**/*.tsx'],
+        files,
+        ignores,
         languageOptions: {
             parser: tsParser,
             parserOptions: {
@@ -47,7 +51,8 @@ export default [
     },
     // React rules
     {
-        files: ['**/*.{js,ts,tsx}'],
+        files,
+        ignores,
         plugins: {
             react: reactPlugin,
             'react-hooks': reactHooks,
@@ -73,7 +78,8 @@ export default [
     },
     // Prettier with Eslint
     {
-        files: ['**/*.{mjs,js,ts,tsx}'],
+        files,
+        ignores,
         plugins: {
             prettier: prettierPlugin,
         },
@@ -86,7 +92,7 @@ export default [
                     singleQuote: true,
                     semi: false,
                     trailingComma: 'es5',
-                    printWidth: 80,
+                    printWidth: 120,
                     arrowParens: 'always',
                 },
             ],
