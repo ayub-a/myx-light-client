@@ -2,6 +2,7 @@ import path from 'path'
 
 import { Configuration, DefinePlugin } from 'webpack'
 import SpriteLoaderPlugin from 'svg-sprite-loader/plugin'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 
 import { buildResolvers } from '../build/buildResolvers'
 import { buildLoaders } from '../build/buildLoaders'
@@ -35,12 +36,17 @@ export const storybookWebpackConfig = (config: Configuration, configType) => {
 
     config.plugins?.push(
         ...[
+            new MiniCssExtractPlugin({
+                filename: 'css/[name].[contenthash:7].css',
+            }),
             new DefinePlugin({
                 __IS_DEV__: JSON.stringify(isDev),
             }),
             new SpriteLoaderPlugin(),
         ]
     )
+
+    config.devtool = isDev ? 'inline-source-map' : undefined
 
     return config
 }

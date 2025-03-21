@@ -13,7 +13,9 @@
 		"lint:scss:fix": "npx stylelint --fix '**/*.scss'",
 		"unit": "jest --config ./config/jest/jest.config.ts",
 		"storybook": "BROWSER=none storybook dev -p 6006 -c ./config/storybook",
-		"storybook:build": "storybook build -c ./config/storybook"
+		"build:storybook": "npm run build-storybook && npm run chromatic",
+		"build-storybook": "storybook build -c ./config/storybook",
+		"chromatic": "dotenv -e .env -- npx chromatic --project-token=$CHROMATIC_TOKEN"
 	},
 	"author": "",
 	"license": "ISC",
@@ -49,7 +51,9 @@
 		"@typescript-eslint/eslint-plugin": "^8.26.1",
 		"@typescript-eslint/parser": "^8.26.1",
 		"babel-loader": "^9.2.1",
+		"chromatic": "^11.27.0",
 		"css-loader": "^7.1.2",
+		"dotenv-cli": "^8.0.0",
 		"eslint": "^9.22.0",
 		"eslint-config-prettier": "^10.1.1",
 		"eslint-plugin-prettier": "^5.2.3",
