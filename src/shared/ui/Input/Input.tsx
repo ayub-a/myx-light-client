@@ -5,10 +5,13 @@ import { clsnm } from 'shared/lib/classNames'
 
 import cls from './Input.module.scss'
 
-type HtmlInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'>
+type HtmlInputProps = Pick<
+    InputHTMLAttributes<HTMLInputElement>,
+    'value' | 'type' | 'className' | 'placeholder'
+>
 
 interface InputProps extends HtmlInputProps {
-    onChange: (value: string) => void
+    onChange?: (value: string) => void
     icon?: boolean
 }
 

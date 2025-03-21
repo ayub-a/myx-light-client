@@ -10,8 +10,11 @@ type ButtonStyles =
     | 'outline-rounded'
     | 'outline-square'
 
-export interface ButtonProps
-    extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'style'> {
+type HtmlButtonPtops = Pick<
+    ButtonHTMLAttributes<HTMLButtonElement>,
+    'onClick' | 'disabled' | 'className'
+>
+export interface ButtonProps extends HtmlButtonPtops {
     style?: ButtonStyles
     size?: 's' | 'm' | 'l'
     ref?: React.RefObject<HTMLButtonElement>
@@ -33,6 +36,7 @@ export const Button = React.forwardRef<
     return (
         <button
             ref={ref}
+            disabled={disabled}
             className={clsnm(cls.Button, [cls[style], cls[size], className], {
                 [cls.disabled]: disabled,
             })}
