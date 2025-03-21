@@ -13,7 +13,7 @@
 		"lint:scss:fix": "npx stylelint --fix '**/*.scss'",
 		"unit": "jest --config ./config/jest/jest.config.ts",
 		"storybook": "BROWSER=none storybook dev -p 6006 -c ./config/storybook",
-		"build-storybook": "storybook build -c ./config/storybook",
+		"deploy-storybook": "storybook build -c ./config/storybook",
 		"chromatic": "cross-env dotenv -e .env -- npx chromatic --project-token $CHROMATIC_PROJECT_TOKEN"
 	},
 	"author": "",
