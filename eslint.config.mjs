@@ -73,7 +73,8 @@ export default [
             'react/prop-types': 'off',
             'react/react-in-jsx-scope': 'off',
             'react/display-name': 'off',
-            'react-hooks/exhaustive-deps': 'off',
+            'react-hooks/exhaustive-deps': 'warn',
+            'react-hooks/rules-of-hooks': 'error',
         },
     },
     // Prettier with Eslint

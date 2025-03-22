@@ -1,4 +1,4 @@
-import { PropsWithChildren, useEffect, useState } from 'react'
+import { PropsWithChildren, useCallback, useEffect, useState } from 'react'
 
 import { priceFormatter } from 'shared/lib/priceFormatter'
 import { clsnm } from 'shared/lib/classNames'
@@ -18,7 +18,7 @@ export const Sidebar = (props: PropsWithChildren<SidebarProps>) => {
     const [totalPrice, setTotalPrice] = useState(0)
     const [promo, setPromo] = useState('')
 
-    const getTotalPrice = () => {
+    const getTotalPrice = useCallback(() => {
         const total = selected.reduce((acc, { price, discount, qty }) => {
             const res = discount > 0 ? Number(priceFormatter.priceWithDiscount(price, discount)) * qty : price * qty
             acc += res
@@ -26,11 +26,11 @@ export const Sidebar = (props: PropsWithChildren<SidebarProps>) => {
         }, 0)
 
         setTotalPrice(total)
-    }
+    }, [selected])
 
     useEffect(() => {
         getTotalPrice()
-    }, [selected])
+    }, [getTotalPrice, selected])
 
     return (
         <div className={clsnm(cls.Sidebar, [], {})}>

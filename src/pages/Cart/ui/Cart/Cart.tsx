@@ -83,12 +83,12 @@ const Cart = () => {
                 return selected.length === cart.length ? [] : cart
             })
         },
-        [selected.length]
+        [cart, selected.length]
     )
 
     useEffect(() => {
         toggleSelectHandler()
-    }, [])
+    }, [toggleSelectHandler])
 
     return (
         <PageLayout sidebar={<Sidebar cart={cart} selected={selected} />}>

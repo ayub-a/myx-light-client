@@ -43,7 +43,7 @@ export const Locale = () => {
         return () => {
             document.body.removeEventListener('click', clickOutside)
         }
-    }, [])
+    }, [i18n])
 
     return (
         <div className={clsnm(cls.Locale)}>
