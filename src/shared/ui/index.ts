@@ -1,3 +1,5 @@
+export { Portal } from './Portal/Portal'
+export { Modal } from './Modal/Modal'
 export { Hint } from './Hint/Hint'
 export { Loader } from './Loader/Loader'
 export { SidebarNavigation } from './SidebarNavigation/SidebarNavigation'
