@@ -1,42 +1,36 @@
-import { PropsWithChildren, useCallback, useEffect, useState } from 'react'
+import { PropsWithChildren, useEffect, useState } from 'react'
 
 import { priceFormatter } from 'shared/lib/priceFormatter'
 import { clsnm } from 'shared/lib/classNames'
 import { Button, Icon } from 'shared/ui'
-import { Product } from '../Cart/Cart'
 
 import cls from './Sidebar.module.scss'
 
+import { useUnit } from 'effector-react'
+import { CartItem } from 'units/cart'
+import { CartSchema } from 'units/cart/model/types'
+import { getTotalPrice } from 'features/cart'
+
 interface SidebarProps {
-    cart?: Product[]
-    selected?: Product[]
+    cart?: CartSchema
+    selected?: CartItem[]
 }
 
 export const Sidebar = (props: PropsWithChildren<SidebarProps>) => {
-    const { cart = [], selected = [] } = props
+    const { cart, selected = [] } = props
 
-    const [totalPrice, setTotalPrice] = useState(0)
+    const [totalPrice] = useUnit([getTotalPrice])
     const [promo, setPromo] = useState('')
 
-    const getTotalPrice = useCallback(() => {
-        const total = selected.reduce((acc, { price, discount, qty }) => {
-            const res = discount > 0 ? Number(priceFormatter.priceWithDiscount(price, discount)) * qty : price * qty
-            acc += res
-            return acc
-        }, 0)
-
-        setTotalPrice(total)
-    }, [selected])
-
     useEffect(() => {
-        getTotalPrice()
-    }, [getTotalPrice, selected])
+        totalPrice()
+    }, [selected])
 
     return (
         <div className={clsnm(cls.Sidebar, [], {})}>
             <div className={clsnm(cls.cart_top, [cls.wrap])}>
                 <h3>Cart</h3>
-                <span>{cart.length} products</span>
+                <span>{cart.products.length} products</span>
             </div>
 
             <div className={clsnm(cls.selected, [cls.wrap])}>
@@ -63,7 +57,7 @@ export const Sidebar = (props: PropsWithChildren<SidebarProps>) => {
 
             <div className={clsnm(cls.total_price, [cls.wrap])}>
                 <h3>Total:</h3>
-                <span>{priceFormatter.defaultPrice(totalPrice, 'SUM')}</span>
+                <span>{priceFormatter.defaultPrice(cart.totalPrice, 'SUM')}</span>
             </div>
 
             <Button disabled={!selected.length} className={cls.checkout_btn}>

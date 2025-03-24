@@ -3,21 +3,21 @@ import { memo, PropsWithChildren } from 'react'
 import { clsnm } from 'shared/lib/classNames'
 import { priceFormatter } from 'shared/lib/priceFormatter'
 import { Button, Icon } from 'shared/ui'
-import { Product } from '../Cart/Cart'
 
 import cls from './CartItem.module.scss'
 
 import testLightImg from 'shared/assets/test-light-img.png'
+import { CartItem } from 'units/cart'
 
 interface CartItemProps {
-    product: Product
-    selected: Product[]
-    changeCartHandler: (product: Product) => void
+    product: CartItem
+    selected: CartItem[]
+    changeCartHandler: (product: CartItem) => void
     removeCartItem: (id: string) => void
-    toggleSelectHandler: (product: Product) => void
+    toggleSelectHandler: (product: CartItem) => void
 }
 
-export const CartItem = memo(
+export const CartItemTest = memo(
     (props: PropsWithChildren<CartItemProps>) => {
         const { product, selected, changeCartHandler, removeCartItem, toggleSelectHandler } = props
 
