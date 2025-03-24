@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 import { ThemeProvider } from 'shared/lib/theme'
 import { ErrorBoundary } from 'shared/lib/errorBoundary'
+import { StoreProvider } from 'shared/lib/storeProvider'
 
 import { App } from './app/App'
 
@@ -14,7 +15,9 @@ root.render(
     <BrowserRouter>
         <ErrorBoundary>
             <ThemeProvider>
-                <App />
+                <StoreProvider>
+                    <App />
+                </StoreProvider>
             </ThemeProvider>
         </ErrorBoundary>
     </BrowserRouter>

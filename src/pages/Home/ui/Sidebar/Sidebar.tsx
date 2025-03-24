@@ -4,20 +4,25 @@ import { clsnm } from 'shared/lib/classNames'
 
 import cls from './Sidebar.module.scss'
 
+import { Counter } from 'units/Counter'
+
 // interface SidebarProps {}
 
 export const Sidebar = () => {
     return (
-        <div className={clsnm(cls.Sidebar)}>
-            <div className={cls.title_wrap}>
-                <h3>Search by car</h3>
-                <span>3 steps to upgrading your car`s lighting</span>
-            </div>
+        <div>
+            <div className={clsnm(cls.Sidebar)}>
+                <div className={cls.title_wrap}>
+                    <h3>Search by car</h3>
+                    <span>3 steps to upgrading your car`s lighting</span>
+                </div>
 
-            <ButtonLink to="/searchbycar/brand" className={cls.btn}>
-                Choose brand
-                <Icon name="arrowRight" />
-            </ButtonLink>
+                <ButtonLink to="/searchbycar/brand" className={cls.btn}>
+                    Choose brand
+                    <Icon name="arrowRight" />
+                </ButtonLink>
+            </div>
+            <Counter />
         </div>
     )
 }
