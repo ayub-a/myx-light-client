@@ -2,11 +2,13 @@ import { PropsWithChildren } from 'react'
 
 import { clsnm } from 'shared/lib/classNames'
 
+import { ProductSize } from '../RightSide/RightSide'
+
 import cls from './About.module.scss'
 
 interface AboutProps {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    about: any[]
+    about: (string | number)[][]
+    currentSize: ProductSize
 }
 
 export const About = ({ about }: PropsWithChildren<AboutProps>) => {

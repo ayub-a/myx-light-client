@@ -1,9 +1,14 @@
 import { PropsWithChildren } from 'react'
+import { useUnit } from 'effector-react'
+
+import { decreaseCount, increaseCount } from 'features/cart'
+import { removeFromCart } from 'features/cart'
+import { ICartItem } from 'units/cart'
 
 import { clsnm } from 'shared/lib/classNames'
 import { Button, Icon } from 'shared/ui'
 
-import { Cart, ProductSize } from '../RightSide/RightSide'
+import { ProductSize } from '../RightSide/RightSide'
 
 import cls from './AddToCart.module.scss'
 
@@ -12,26 +17,23 @@ import aslifshop from 'shared/assets/alif-shop.png'
 
 interface AddToCartProps {
     currentSize: ProductSize
-    changeCart: (newCart: Cart) => void
-    cart: Cart
+    cart: { [k: string]: ICartItem }
+    addToCart: () => void
 }
 
-export const AddToCart = ({ currentSize, changeCart, cart }: PropsWithChildren<AddToCartProps>) => {
-    const cartHandler = (size: number) => {
-        changeCart({ [size]: { qty: 1, size }, ...cart })
-    }
+export const AddToCart = ({ currentSize, cart, addToCart }: PropsWithChildren<AddToCartProps>) => {
+    const [onIncreaseCount, onDecreaseCount, onRemoveFromCart] = useUnit([increaseCount, decreaseCount, removeFromCart])
 
     const increase = () => {
-        cart[currentSize.size].qty++
-        changeCart({ ...cart })
+        onIncreaseCount(currentSize.id)
     }
 
     const decrease = () => {
-        cart[currentSize.size].qty--
+        onDecreaseCount(currentSize.id)
+    }
 
-        if (cart[currentSize.size].qty === 0) delete cart[currentSize.size]
-
-        changeCart({ ...cart })
+    const removeFromCartHandler = () => {
+        onRemoveFromCart(currentSize.id)
     }
 
     return (
@@ -39,31 +41,44 @@ export const AddToCart = ({ currentSize, changeCart, cart }: PropsWithChildren<A
             <div className={cls.flex_wrap}>
                 <Button
                     className={clsnm(cls.add_to_cart, [cls.button], {
-                        [cls.hide]: cart[currentSize.size]?.size === currentSize.size,
+                        [cls.hide]: cart[currentSize.id]?.id === currentSize?.id,
                     })}
-                    onClick={() => cartHandler(currentSize.size)}
+                    onClick={addToCart}
                 >
                     <Icon name="addtocart" size={24} />
                     Добавить в корзину
                 </Button>
 
+                {cart[currentSize.id]?.qty ? (
+                    <Button className={clsnm(cls.qty_btn, [cls.remove_btn])} onClick={removeFromCartHandler}>
+                        <Icon name="close" size={22} />
+                    </Button>
+                ) : null}
+
                 <div
                     className={clsnm(cls.cart_counter, [cls.button], {
-                        [cls.show_qty]: cart[currentSize.size]?.size === currentSize.size,
+                        [cls.show_qty]: cart[currentSize.id]?.id === currentSize?.id,
                     })}
                 >
                     <Button className={cls.qty_btn} onClick={decrease}>
                         -
                     </Button>
-                    <span>{cart[currentSize.size]?.qty}</span>
+
+                    <span>{cart[currentSize.id]?.qty}</span>
                     <Button className={cls.qty_btn} onClick={increase}>
                         +
                     </Button>
                 </div>
 
-                <Button className={clsnm(cls.buy_now, [cls.button])} style="outline-rounded">
-                    Купить в 1 клик
-                </Button>
+                {cart[currentSize.id]?.qty ? (
+                    <Button className={clsnm(cls.buy_now, [cls.button])} style="rounded">
+                        Перейти в корзину
+                    </Button>
+                ) : (
+                    <Button className={clsnm(cls.buy_now, [cls.button])} style="outline-rounded">
+                        Купить в 1 клик
+                    </Button>
+                )}
             </div>
 
             <span className={cls.divider}>или</span>

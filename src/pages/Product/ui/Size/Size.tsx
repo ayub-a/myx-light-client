@@ -1,21 +1,23 @@
 import { PropsWithChildren } from 'react'
 
-import { clsnm } from 'shared/lib/classNames'
+import { ICartItem } from 'units/cart'
 
+import { clsnm } from 'shared/lib/classNames'
 import { Button, Hint, Icon } from 'shared/ui'
-import { Cart, ProductSize } from '../RightSide/RightSide'
+
+import { ProductSize } from '../RightSide/RightSide'
 
 import cls from './Size.module.scss'
 
 interface SizeProps {
+    cart: { [k: string]: ICartItem }
     sizes: ProductSize[]
     currentSize: ProductSize
     setCurrentSize: (size: ProductSize) => void
-    cart: Cart
 }
 
 export const Size = (props: PropsWithChildren<SizeProps>) => {
-    const { sizes, currentSize, setCurrentSize, cart } = props
+    const { cart, sizes, currentSize, setCurrentSize } = props
 
     return (
         <div className={clsnm(cls.Size, [], {})}>
@@ -33,7 +35,7 @@ export const Size = (props: PropsWithChildren<SizeProps>) => {
                                 disabled={!el.inStock}
                                 className={clsnm(cls.size_btn, [], {
                                     [cls.out_of_stock]: !el.inStock,
-                                    [cls.active]: currentSize.size === el.size,
+                                    [cls.active]: currentSize.id === el.id,
                                 })}
                             >
                                 {el.left > 0 ? (
@@ -41,13 +43,13 @@ export const Size = (props: PropsWithChildren<SizeProps>) => {
                                         <Icon name="warning" size={25} />
                                     </div>
                                 ) : null}
-                                {cart[el.size]?.qty ? (
+                                {cart[el.id]?.qty ? (
                                     <div
                                         className={clsnm(cls.size_qty, [], {
                                             [cls.with_left]: el.left > 0,
                                         })}
                                     >
-                                        {cart[el.size]?.qty}
+                                        {cart[el.id]?.qty}
                                     </div>
                                 ) : null}
                                 {el.size} mm

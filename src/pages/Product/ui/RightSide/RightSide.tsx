@@ -1,4 +1,9 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import { useUnit } from 'effector-react'
+
+import { addToCart } from 'features/product'
+import { $cart, ICartItem } from 'units/cart'
 
 import { clsnm } from 'shared/lib/classNames'
 import { Icon } from 'shared/ui'
@@ -12,20 +17,6 @@ import { About } from '../About/About'
 import cls from './RightSide.module.scss'
 
 // interface RightSideProps {}
-
-export interface ProductSize {
-    price: number
-    discount: number
-    size: number
-    inStock: boolean
-    left: number
-    boughthisweek: number
-    cars: typeof cars
-}
-
-export interface Cart {
-    [key: number]: { qty: number; size: number }
-}
 
 const cars = [
     {
@@ -44,6 +35,7 @@ const cars = [
 
 const sizes = [
     {
+        id: 'MYX0202301431',
         price: 37800,
         discount: 15,
         size: 31,
@@ -53,6 +45,7 @@ const sizes = [
         cars,
     },
     {
+        id: 'MYX0202301436',
         price: 35000,
         discount: -1,
         size: 36,
@@ -62,6 +55,7 @@ const sizes = [
         cars,
     },
     {
+        id: 'MYX0202301439',
         price: 33400,
         discount: 20,
         size: 39,
@@ -71,6 +65,7 @@ const sizes = [
         cars,
     },
     {
+        id: 'MYX0202301441',
         price: 37800,
         discount: -1,
         size: 41,
@@ -95,16 +90,65 @@ const about = [
     ['purpose', 'Interior lighting, number plate lighting'],
 ]
 
+export interface ProductSize {
+    id: string
+    price: number
+    discount: number
+    size: number
+    inStock: boolean
+    left: number
+    boughthisweek: number
+    cars: typeof cars
+}
+
+interface ProductItem {
+    id: string
+    name: string
+    sizes: ProductSize[]
+    about: (string | number)[][]
+}
+
 export const RightSide = () => {
-    const [currentSize, setCurrentSize] = useState(sizes[0])
-    const [cart, setCart] = useState<Cart>({})
+    const { productId = 'MYX02023014' } = useParams()
+
+    const [cart, onAddToCart] = useUnit([$cart, addToCart])
+
+    const [product] = useState<ProductItem>({
+        id: productId,
+        name: 'Габариты MYX C5W, 3014, 12V, 3W, Canbus, 2шт.',
+        sizes,
+        about,
+    })
+
+    const [currentSize, setCurrentSize] = useState(product.sizes[0])
+
+    const localCart = useMemo(() => {
+        return cart.products.reduce((acc: { [K: string]: ICartItem }, item) => {
+            const sizesInclude = product.sizes.some((size) => size.id === item.id)
+
+            if (sizesInclude) {
+                acc[item.id] = item
+            }
+
+            return acc
+        }, {})
+    }, [cart])
 
     const currentSizeHandler = (size: ProductSize) => {
         setCurrentSize(size)
     }
 
-    const changeCart = (newCart: Cart) => {
-        setCart(newCart)
+    const addToCartHandler = () => {
+        const newProduct = {
+            id: currentSize.id,
+            name: product.name,
+            size: [currentSize.size],
+            price: currentSize.price,
+            discount: currentSize.discount,
+            qty: 1,
+        }
+
+        onAddToCart(newProduct)
     }
 
     return (
@@ -117,8 +161,8 @@ export const RightSide = () => {
 
             <div className={cls.flex_wrap}>
                 <div className={cls.flex_wrap_col}>
-                    <h3 className={cls.product_title}>Габариты MYX C5W, 3014, 12V, 3W, Canbus, 2шт.</h3>
-                    <span className={cls.product_id}>Артикул: MYX0202301441</span>
+                    <h3 className={cls.product_title}>{product.name}</h3>
+                    <span className={cls.product_id}>Артикул: {currentSize.id}</span>
                 </div>
                 <div className={cls.favourite_btn}>
                     <Icon name="like" size={33} />
@@ -129,11 +173,16 @@ export const RightSide = () => {
 
             <Badges currentSize={currentSize} />
 
-            <Size sizes={sizes} currentSize={currentSize} setCurrentSize={currentSizeHandler} cart={cart} />
+            <Size
+                cart={localCart}
+                sizes={product.sizes}
+                currentSize={currentSize}
+                setCurrentSize={currentSizeHandler}
+            />
 
-            <AddToCart currentSize={currentSize} cart={cart} changeCart={changeCart} />
+            <AddToCart currentSize={currentSize} cart={localCart} addToCart={addToCartHandler} />
 
-            <About about={about} />
+            <About about={product.about} currentSize={currentSize} />
         </div>
     )
 }
