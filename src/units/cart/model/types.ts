@@ -1,14 +1,14 @@
-export interface CartItem {
+export interface ICartItem {
     id: string
     name: string
-    sizes: string[]
+    size: string[] | number[]
     price: number
     discount: number
     qty: number
 }
 
-export interface CartSchema {
-    products: CartItem[]
+export interface ICartSchema {
+    products: ICartItem[]
     qty: number
     promoCode: string
     totalPrice: number

@@ -1,39 +1,39 @@
 import { createStore } from 'effector'
-import { CartItem, CartSchema } from './types'
+import { ICartItem, ICartSchema } from './types'
 
-const initialItems: CartItem[] = [
+const initialItems: ICartItem[] = [
     {
         id: 'MYX03D150M',
         name: 'Штатный ксенон MYX D1S, 12V, 35W, 2шт.',
-        sizes: ['Металл', '6000K'],
+        size: ['Металл', '6000K'],
         price: 285000,
         discount: 20,
         qty: 1,
     },
-    {
-        id: 'MYX03D150A',
-        name: 'Штатный ксенон MYX D1S, 12V, 35W, 2шт.',
-        sizes: ['32 mm'],
-        price: 285000,
-        discount: -1,
-        qty: 1,
-    },
-    {
-        id: 'MYX03D150T',
-        name: 'Штатный ксенон MYX D1S, 12V, 35W, 2шт.',
-        sizes: ['Металл', '6000K'],
-        price: 285000,
-        discount: 20,
-        qty: 1,
-    },
+    // {
+    //     id: 'MYX03D150A',
+    //     name: 'Штатный ксенон MYX D1S, 12V, 35W, 2шт.',
+    //     size: ['32 mm'],
+    //     price: 285000,
+    //     discount: -1,
+    //     qty: 1,
+    // },
+    // {
+    //     id: 'MYX03D150T',
+    //     name: 'Штатный ксенон MYX D1S, 12V, 35W, 2шт.',
+    //     size: ['Металл', '6000K'],
+    //     price: 285000,
+    //     discount: 20,
+    //     qty: 1,
+    // },
 ]
 
-const cartState: CartSchema = {
+const cartState: ICartSchema = {
     products: initialItems,
-    qty: 0,
+    qty: initialItems.length,
     promoCode: '',
     totalPrice: 0,
 }
 
 export const $cart = createStore(cartState)
-export const $selected = createStore<CartItem[]>(initialItems)
+export const $selected = createStore<ICartItem[]>(initialItems)

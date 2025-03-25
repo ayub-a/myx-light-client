@@ -1,3 +1,3 @@
-export type { CartSchema, CartItem } from './model/types'
+export type { ICartSchema, ICartItem } from './model/types'
 
 export { $cart, $selected } from './model/cartModel'

@@ -1,7 +1,7 @@
 import { createEvent } from 'effector'
-import { $cart, $selected, CartItem } from 'units/cart'
+import { $cart, $selected, ICartItem } from 'units/cart'
 
-export const selectCartItem = createEvent<CartItem>('select-cart-item')
+export const selectCartItem = createEvent<ICartItem>('select-cart-item')
 
 $selected.on(selectCartItem, (state, cartItem) => {
     if (cartItem) {
