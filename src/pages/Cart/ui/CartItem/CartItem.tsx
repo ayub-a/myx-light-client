@@ -1,4 +1,8 @@
 import { memo, PropsWithChildren } from 'react'
+import { useUnit } from 'effector-react'
+
+import { decreaseCount, increaseCount } from 'features/cart'
+import { ICartItem } from 'units/cart'
 
 import { clsnm } from 'shared/lib/classNames'
 import { priceFormatter } from 'shared/lib/priceFormatter'
@@ -7,27 +11,26 @@ import { Button, Icon } from 'shared/ui'
 import cls from './CartItem.module.scss'
 
 import testLightImg from 'shared/assets/test-light-img.png'
-import { CartItem } from 'units/cart'
 
 interface CartItemProps {
-    product: CartItem
-    selected: CartItem[]
-    changeCartHandler: (product: CartItem) => void
+    product: ICartItem
+    selected: ICartItem[]
     removeCartItem: (id: string) => void
-    toggleSelectHandler: (product: CartItem) => void
+    toggleSelectHandler: (product: ICartItem) => void
 }
 
-export const CartItemTest = memo(
+export const CartItem = memo(
     (props: PropsWithChildren<CartItemProps>) => {
-        const { product, selected, changeCartHandler, removeCartItem, toggleSelectHandler } = props
+        const { product, selected, removeCartItem, toggleSelectHandler } = props
+
+        const cartItemActions = useUnit({ decreaseCount, increaseCount })
 
         const decrease = () => {
-            if (product.qty === 1) return
-            changeCartHandler({ ...product, qty: product.qty - 1 })
+            cartItemActions.decreaseCount(product.id)
         }
 
         const increase = () => {
-            changeCartHandler({ ...product, qty: product.qty + 1 })
+            cartItemActions.increaseCount(product.id)
         }
 
         const checked = selected.some((el) => el.id === product.id)
@@ -51,7 +54,7 @@ export const CartItemTest = memo(
                             <span className={cls.product_id}>Артикул: {product.id}</span>
 
                             <ul className={cls.product_sizes}>
-                                {product.sizes.map((size, i) => (
+                                {product.size.map((size, i) => (
                                     <li key={i}>{size}</li>
                                 ))}
                             </ul>
@@ -63,7 +66,7 @@ export const CartItemTest = memo(
                                             {priceFormatter.defaultPrice(product.price, 'SUM')}
                                         </h3>
                                         <h3 className={cls.product_price}>
-                                            {priceFormatter.priceWithDiscount(product.price, product.discount, 'SUM')}{' '}
+                                            {priceFormatter.priceWithDiscount(product.price, product.discount, 'SUM')}
                                             <span>/ 1шт.</span>
                                         </h3>
                                     </>
@@ -101,7 +104,9 @@ export const CartItemTest = memo(
                         </div>
 
                         <div className={cls.product_qty_nav}>
-                            <button onClick={decrease}>-</button>
+                            <button disabled={product.qty === 1} onClick={decrease}>
+                                -
+                            </button>
                             <span>{product.qty}</span>
                             <button onClick={increase}>+</button>
                         </div>

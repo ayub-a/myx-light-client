@@ -1,4 +1,8 @@
 import { PropsWithChildren, useEffect, useState } from 'react'
+import { useUnit } from 'effector-react'
+
+import { getTotalPrice } from 'features/cart'
+import { ICartItem, ICartSchema } from 'units/cart'
 
 import { priceFormatter } from 'shared/lib/priceFormatter'
 import { clsnm } from 'shared/lib/classNames'
@@ -6,14 +10,9 @@ import { Button, Icon } from 'shared/ui'
 
 import cls from './Sidebar.module.scss'
 
-import { useUnit } from 'effector-react'
-import { CartItem } from 'units/cart'
-import { CartSchema } from 'units/cart/model/types'
-import { getTotalPrice } from 'features/cart'
-
 interface SidebarProps {
-    cart?: CartSchema
-    selected?: CartItem[]
+    cart?: ICartSchema
+    selected?: ICartItem[]
 }
 
 export const Sidebar = (props: PropsWithChildren<SidebarProps>) => {
