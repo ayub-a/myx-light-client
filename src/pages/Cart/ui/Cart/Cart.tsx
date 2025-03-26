@@ -1,6 +1,6 @@
 import { useUnit } from 'effector-react'
 
-import { removeAllSelected, selectCartItem, removeFromCart } from 'features/cart'
+import { removeAllSelected, selectCartItem, removeFromCart, selectAllItems } from 'features/cart'
 import { $cart, $selected, ICartItem } from 'units/cart'
 
 import { Icon, PageLayout } from 'shared/ui'
@@ -13,22 +13,18 @@ import cls from './Cart.module.scss'
 
 const Cart = () => {
     const [cart, selected] = useUnit([$cart, $selected])
-    const cartActions = useUnit({ removeFromCart, removeAllSelected, selectCartItem })
+    const cartActions = useUnit({ removeFromCart, removeAllSelected, selectCartItem, selectAllItems })
 
-    const removeAllSelectedHandler = () => {
-        cartActions.removeAllSelected()
-    }
-
-    const removeCartElem = (id: string) => {
+    const removeCartItemHandler = (id: string) => {
         cartActions.removeFromCart(id)
     }
 
-    const toggleSelectHandler = (product?: ICartItem) => {
+    const selectCartItemHandler = (product?: ICartItem) => {
         cartActions.selectCartItem(product)
     }
 
     return (
-        <PageLayout sidebar={<Sidebar cart={cart} selected={selected} />}>
+        <PageLayout sidebar={<Sidebar />}>
             <div className={clsnm(cls.Cart)}>
                 <div className={cls.umbrella}></div>
 
@@ -36,12 +32,12 @@ const Cart = () => {
                     <div className={cls.cart_nav_el}>
                         <input
                             type="checkbox"
-                            checked={selected.length ? cart.products.length === selected.length : false}
-                            onChange={() => toggleSelectHandler()}
+                            checked={cart.products.length ? cart.products.length === selected.length : false}
+                            onChange={cartActions.selectAllItems}
                         />
                         <span>Выбрать все</span>
                     </div>
-                    <div className={cls.cart_nav_el} onClick={removeAllSelectedHandler}>
+                    <div className={cls.cart_nav_el} onClick={cartActions.removeAllSelected}>
                         <Icon name="remove" size={24} />
                         <span>Удалить выбранные</span>
                     </div>
@@ -53,8 +49,8 @@ const Cart = () => {
                             key={product.id}
                             product={product}
                             selected={selected}
-                            removeCartItem={removeCartElem}
-                            toggleSelectHandler={toggleSelectHandler}
+                            removeCartItem={removeCartItemHandler}
+                            toggleSelectHandler={selectCartItemHandler}
                         />
                     ))}
                 </div>

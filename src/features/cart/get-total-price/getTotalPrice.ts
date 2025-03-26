@@ -1,6 +1,8 @@
 import { createEvent } from 'effector'
-import { priceFormatter } from 'shared/lib/priceFormatter'
+
 import { $cart, $selected } from 'units/cart'
+
+import { priceFormatter } from 'shared/lib/priceFormatter'
 
 export const getTotalPrice = createEvent('get-total-price')
 

@@ -1,8 +1,7 @@
-import { PropsWithChildren, useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useUnit } from 'effector-react'
 
-import { getTotalPrice } from 'features/cart'
-import { ICartItem, ICartSchema } from 'units/cart'
+import { $cart, $selected, $totalSelectedPrice } from 'units/cart'
 
 import { priceFormatter } from 'shared/lib/priceFormatter'
 import { clsnm } from 'shared/lib/classNames'
@@ -10,36 +9,26 @@ import { Button, Icon } from 'shared/ui'
 
 import cls from './Sidebar.module.scss'
 
-interface SidebarProps {
-    cart?: ICartSchema
-    selected?: ICartItem[]
-}
-
-export const Sidebar = (props: PropsWithChildren<SidebarProps>) => {
-    const { cart, selected = [] } = props
-
-    const [totalPrice] = useUnit([getTotalPrice])
+export const Sidebar = () => {
     const [promo, setPromo] = useState('')
 
-    useEffect(() => {
-        totalPrice()
-    }, [selected])
+    const store = useUnit({ $cart, $selected, $totalSelectedPrice })
 
     return (
         <div className={clsnm(cls.Sidebar, [], {})}>
             <div className={clsnm(cls.cart_top, [cls.wrap])}>
                 <h3>Cart</h3>
-                <span>{cart.products.length} products</span>
+                <span>{store.$cart.products.length} products</span>
             </div>
 
             <div className={clsnm(cls.selected, [cls.wrap])}>
                 <h4>Selected</h4>
-                <span>{selected.length} products</span>
+                <span>{store.$selected.length} products</span>
             </div>
 
-            <div className={cls.promo_code} data-disabled={!selected.length}>
+            <div className={cls.promo_code} data-disabled={!store.$selected.length}>
                 <input
-                    disabled={!selected.length}
+                    disabled={!store.$selected.length}
                     type="text"
                     onChange={(e) => setPromo(e.target.value)}
                     value={promo}
@@ -56,10 +45,10 @@ export const Sidebar = (props: PropsWithChildren<SidebarProps>) => {
 
             <div className={clsnm(cls.total_price, [cls.wrap])}>
                 <h3>Total:</h3>
-                <span>{priceFormatter.defaultPrice(cart.totalPrice, 'SUM')}</span>
+                <span>{priceFormatter.defaultPrice(store.$totalSelectedPrice, 'SUM')}</span>
             </div>
 
-            <Button disabled={!selected.length} className={cls.checkout_btn}>
+            <Button disabled={!store.$selected.length} className={cls.checkout_btn}>
                 <Icon name="checkout" size={24} />
                 Proceed to checkout
             </Button>

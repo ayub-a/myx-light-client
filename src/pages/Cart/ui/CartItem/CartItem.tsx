@@ -21,7 +21,7 @@ interface CartItemProps {
 
 export const CartItem = memo(
     (props: PropsWithChildren<CartItemProps>) => {
-        const { product, selected, removeCartItem, toggleSelectHandler } = props
+        const { product, removeCartItem, toggleSelectHandler } = props
 
         const cartItemActions = useUnit({ decreaseCount, increaseCount })
 
@@ -33,13 +33,15 @@ export const CartItem = memo(
             cartItemActions.increaseCount(product.id)
         }
 
-        const checked = selected.some((el) => el.id === product.id)
-
         return (
             <div className={clsnm(cls.CartItem, [], {})}>
                 <div className={cls.left_block}>
                     <div className={cls.checkbox}>
-                        <input type="checkbox" checked={checked} onChange={() => toggleSelectHandler(product)} />
+                        <input
+                            type="checkbox"
+                            checked={product.isSelected}
+                            onChange={() => toggleSelectHandler(product)}
+                        />
                     </div>
 
                     <div className={cls.product_block}>
@@ -54,9 +56,11 @@ export const CartItem = memo(
                             <span className={cls.product_id}>Артикул: {product.id}</span>
 
                             <ul className={cls.product_sizes}>
-                                {product.size.map((size, i) => (
+                                {/* {product.size.map((size, i) => (
                                     <li key={i}>{size}</li>
-                                ))}
+                                ))} */}
+
+                                <li> {product.size}</li>
                             </ul>
 
                             <div className={cls.product_price_wrap}>
@@ -125,6 +129,5 @@ export const CartItem = memo(
             </div>
         )
     },
-    (prevProps, nextProps) =>
-        prevProps.product === nextProps.product && prevProps.toggleSelectHandler === nextProps.toggleSelectHandler
+    (prevProps, nextProps) => prevProps.toggleSelectHandler === nextProps.toggleSelectHandler
 )

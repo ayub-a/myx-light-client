@@ -1,13 +1,11 @@
 import { createEvent } from 'effector'
-import { $cart, $selected, ICartItem } from 'units/cart'
+import { $cart, ICartItem } from 'units/cart'
 
 export const selectCartItem = createEvent<ICartItem>('select-cart-item')
 
-$selected.on(selectCartItem, (state, cartItem) => {
-    if (cartItem) {
-        return state.some((item) => item.id === cartItem.id)
-            ? state.filter((item) => item.id !== cartItem.id)
-            : [...state, cartItem]
+$cart.on(selectCartItem, (state, cartItem) => {
+    return {
+        ...state,
+        products: state.products.map((p) => (p.id === cartItem.id ? { ...p, isSelected: !p.isSelected } : p)),
     }
-    return state.length === $cart.getState().products.length ? [] : $cart.getState().products
 })
