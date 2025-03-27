@@ -14,6 +14,7 @@ export default (env: BuildEnv): Configuration => {
         output: path.resolve(__dirname, 'build'),
         html: path.resolve(__dirname, 'public', 'index.html'),
         src: path.resolve(__dirname, 'src'),
+        env: path.resolve(__dirname, '.env'),
     }
 
     return buildWebpackConfig({

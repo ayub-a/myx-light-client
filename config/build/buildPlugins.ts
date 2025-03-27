@@ -3,6 +3,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import ReactRefreshPlugin from '@pmmmwh/react-refresh-webpack-plugin'
+import Dotenv from 'dotenv-webpack'
 
 // @ts-ignore
 import SpriteLoaderPlugin from 'svg-sprite-loader/plugin'
@@ -15,6 +16,10 @@ export function buildPlugins({ paths, analyzer, isDev }: BuildConfig): WebpackPl
         new HotModuleReplacementPlugin(),
         new DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
+        }),
+        new Dotenv({
+            path: paths.env,
+            safe: true,
         }),
         new HtmlWebpackPlugin({
             template: paths.html,

@@ -11,6 +11,7 @@ export interface BuildPaths {
     output: string
     html: string
     src: string
+    env: string
 }
 
 export interface BuildConfig {
