@@ -3,12 +3,12 @@ import { useUnit } from 'effector-react'
 
 import { decreaseCount, increaseCount } from 'features/cart'
 import { removeFromCart } from 'features/cart'
+
+import { IProductSize } from 'units/product'
 import { ICartItem } from 'units/cart'
 
 import { clsnm } from 'shared/lib/classNames'
 import { Button, Icon } from 'shared/ui'
-
-import { ProductSize } from '../RightSide/RightSide'
 
 import cls from './AddToCart.module.scss'
 
@@ -16,8 +16,8 @@ import uzumshop from 'shared/assets/uzum-shop.png'
 import aslifshop from 'shared/assets/alif-shop.png'
 
 interface AddToCartProps {
-    currentSize: ProductSize
-    cart: { [k: string]: ICartItem }
+    currentSize: IProductSize
+    cart: Record<string, ICartItem>
     addToCart: () => void
 }
 

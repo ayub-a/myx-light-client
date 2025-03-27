@@ -1,9 +1,27 @@
 import { createEvent } from 'effector'
 import { $cart, ICartItem } from 'units/cart'
+import { IProductSize } from 'units/product'
 
-export const addToCart = createEvent<ICartItem>('add-to-cart')
+interface IAddTocartParams extends IProductSize {
+    name: string
+}
+
+export const addToCart = createEvent<IAddTocartParams>('add-to-cart')
 
 $cart.on(addToCart, (state, product) => {
-    if (state.products.find((p) => p.id === product.id)) return
-    return { ...state, qty: state.qty + 1, products: [product, ...state.products] }
+    const { id, name, size, price, discount } = product
+
+    if (state.products.find((p) => p.id === id)) return
+
+    const newProduct: ICartItem = {
+        id: id,
+        name: name,
+        size: size,
+        price: price,
+        discount: discount,
+        qty: 1,
+        isSelected: true,
+    }
+
+    return { ...state, qty: state.qty + 1, products: [newProduct, ...state.products] }
 })

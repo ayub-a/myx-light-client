@@ -1,19 +1,18 @@
 import { PropsWithChildren } from 'react'
 
 import { ICartItem } from 'units/cart'
+import { IProductSize } from 'units/product'
 
 import { clsnm } from 'shared/lib/classNames'
 import { Button, Hint, Icon } from 'shared/ui'
 
-import { ProductSize } from '../RightSide/RightSide'
-
 import cls from './Size.module.scss'
 
 interface SizeProps {
-    cart: { [k: string]: ICartItem }
-    sizes: ProductSize[]
-    currentSize: ProductSize
-    setCurrentSize: (size: ProductSize) => void
+    cart: Record<string, ICartItem>
+    sizes: IProductSize[]
+    currentSize: IProductSize
+    setCurrentSize: (size: IProductSize) => void
 }
 
 export const Size = (props: PropsWithChildren<SizeProps>) => {

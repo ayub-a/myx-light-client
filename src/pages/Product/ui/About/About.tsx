@@ -2,13 +2,10 @@ import { PropsWithChildren } from 'react'
 
 import { clsnm } from 'shared/lib/classNames'
 
-import { ProductSize } from '../RightSide/RightSide'
-
 import cls from './About.module.scss'
 
 interface AboutProps {
     about: (string | number)[][]
-    currentSize: ProductSize
 }
 
 export const About = ({ about }: PropsWithChildren<AboutProps>) => {

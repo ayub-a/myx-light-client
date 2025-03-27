@@ -1,10 +1,11 @@
 import { PropsWithChildren } from 'react'
 
+import { IProductSize } from 'units/product'
+
 import { clsnm } from 'shared/lib/classNames'
 import { CustomLink, Icon } from 'shared/ui'
 
 import cls from './Badges.module.scss'
-import { ProductSize } from '../RightSide/RightSide'
 
 interface Badges {
     id: number
@@ -13,7 +14,7 @@ interface Badges {
 }
 
 interface BadgesProps {
-    currentSize: ProductSize
+    currentSize: IProductSize
 }
 
 export const Badges = ({ currentSize }: PropsWithChildren<BadgesProps>) => {

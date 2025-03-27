@@ -1,14 +1,14 @@
 import { PropsWithChildren } from 'react'
 
+import { IProductSize } from 'units/product'
+
 import { clsnm } from 'shared/lib/classNames'
 import { priceFormatter } from 'shared/lib/priceFormatter'
-
-import { ProductSize } from '../RightSide/RightSide'
 
 import cls from './Price.module.scss'
 
 interface PriceProps {
-    currentSize: ProductSize
+    currentSize: IProductSize
 }
 
 export const Price = ({ currentSize }: PropsWithChildren<PriceProps>) => {
