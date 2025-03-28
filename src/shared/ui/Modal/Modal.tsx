@@ -1,6 +1,7 @@
 import { PropsWithChildren, useCallback, useEffect } from 'react'
 
 import { clsnm } from 'shared/lib/classNames'
+
 import { useTheme } from 'shared/lib/theme'
 import { Portal } from '../Portal/Portal'
 
@@ -32,7 +33,7 @@ export const Modal = ({ children, isOpen, onClose, openStyle = 'opacity' }: Prop
         return () => {
             document.removeEventListener('keydown', closeByEscape)
         }
-    }, [closeByEscape, isOpen])
+    }, [isOpen])
 
     return (
         <Portal>
