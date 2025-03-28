@@ -15,6 +15,7 @@ import close from 'shared/assets/icons/close.svg'
 import checkout from 'shared/assets/icons/checkout.svg'
 import box from 'shared/assets/icons/box.svg'
 import warningV1 from 'shared/assets/icons/warning-v1.svg'
+import login from 'shared/assets/icons/login.svg'
 
 // badges
 import completed from 'shared/assets/icons/completed.svg'
@@ -64,6 +65,7 @@ const icons = {
     remove: close,
     checkout,
     box,
+    login,
 }
 
 export type Icons = keyof typeof icons
