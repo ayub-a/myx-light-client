@@ -5,7 +5,7 @@ import cls from './Button.module.scss'
 
 type ButtonStyles = 'clear' | 'rounded' | 'square' | 'outline-rounded' | 'outline-square'
 
-type HtmlButtonPtops = Pick<ButtonHTMLAttributes<HTMLButtonElement>, 'onClick' | 'disabled' | 'className'>
+type HtmlButtonPtops = Pick<ButtonHTMLAttributes<HTMLButtonElement>, 'onClick' | 'disabled' | 'className' | 'type'>
 export interface ButtonProps extends HtmlButtonPtops {
     style?: ButtonStyles
     size?: 's' | 'm' | 'l'

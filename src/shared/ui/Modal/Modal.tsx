@@ -11,7 +11,7 @@ export type OpenStyle = 'opacity' | 'scale' | 'top-bottom' | 'bottom-top'
 
 interface ModalProps {
     isOpen: boolean
-    onClose: () => void
+    onClose?: () => void
     openStyle?: OpenStyle
 }
 
