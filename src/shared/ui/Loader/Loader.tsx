@@ -2,9 +2,13 @@ import { clsnm } from 'shared/lib/classNames'
 
 import cls from './Loader.module.scss'
 
-export const Loader = () => {
+interface ILoaderProps {
+    className?: string
+}
+
+export const Loader = ({ className }: ILoaderProps) => {
     return (
-        <div className={clsnm(cls.loader_container)}>
+        <div className={clsnm(cls.loader_container, [className])}>
             <span className={cls.Loader}></span>
         </div>
     )
