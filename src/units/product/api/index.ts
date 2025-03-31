@@ -3,7 +3,7 @@ import { AxiosError } from 'axios'
 
 import { api, handleApiError } from 'shared/api'
 
-import { $productState } from 'units/product/model/product'
+import { $productState } from 'units/product/model/store'
 import { IProduct } from '../model/type'
 
 export const fetchProductFx = createEffect<string, IProduct, AxiosError>('fetch-product')
