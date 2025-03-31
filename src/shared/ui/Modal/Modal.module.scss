@@ -26,9 +26,8 @@
     position: relative;
     max-width: 50%;
     max-height: 60%;
-    padding: 15px;
-    border-radius: 10px;
     transition: 0.25s ease-in-out;
+    background: none !important;
 
     &.bottom-top {
         top: 70px;

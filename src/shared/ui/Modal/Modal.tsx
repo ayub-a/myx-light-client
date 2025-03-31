@@ -1,8 +1,8 @@
 import { PropsWithChildren, useCallback, useEffect } from 'react'
 
 import { clsnm } from 'shared/lib/classNames'
-
 import { useTheme } from 'shared/lib/theme'
+
 import { Portal } from '../Portal/Portal'
 
 import cls from './Modal.module.scss'
@@ -28,10 +28,12 @@ export const Modal = ({ children, isOpen, onClose, openStyle = 'opacity' }: Prop
     useEffect(() => {
         if (isOpen) {
             document.addEventListener('keydown', closeByEscape)
+            document.body.style.overflow = 'hidden'
         }
 
         return () => {
             document.removeEventListener('keydown', closeByEscape)
+            document.body.style.overflow = 'auto'
         }
     }, [isOpen])
 
