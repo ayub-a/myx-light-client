@@ -10,8 +10,8 @@ export default {
         ],
         'selector-class-pattern': null,
         'no-descending-specificity': null,
-        'color-hex-length': 'short',
         'block-no-empty': true,
         'declaration-block-no-duplicate-properties': true,
+        'color-hex-length': 'long',
     },
 }
