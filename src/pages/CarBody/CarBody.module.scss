@@ -3,7 +3,7 @@
     position: fixed;
     top: 90px;
     z-index: 10;
-    background: #fff;
+    background: #ffffff;
     height: 70px;
     width: 100%;
 }
@@ -15,7 +15,7 @@
     position: sticky;
     top: 130px;
     margin-bottom: 20px;
-    background: #fff;
+    background: #ffffff;
     padding-bottom: 5px;
     z-index: 10;
 
@@ -39,19 +39,19 @@
         border-color: #ffbf95;
 
         .body_header {
-            border-bottom-color: #fff;
+            border-bottom-color: #ffffff;
         }
 
         .body_type {
-            color: #fff;
+            color: #ffffff;
         }
 
         .info_icon {
-            color: #fff;
+            color: #ffffff;
         }
 
         .title {
-            color: #fff;
+            color: #ffffff;
         }
 
         .divider {
@@ -64,8 +64,8 @@
                 height: 1px;
                 background: repeating-linear-gradient(
                     to right,
-                    #fff,
-                    #fff 5px,
+                    #ffffff,
+                    #ffffff 5px,
                     transparent 5px,
                     transparent 15px
                 );
@@ -73,7 +73,7 @@
         }
 
         .value {
-            color: #fff;
+            color: #ffffff;
         }
 
         .car_img {
@@ -178,7 +178,7 @@
             rgb(255 255 255 / 100%) 0%,
             rgb(255 102 0 / 100%) 100%
         );
-        color: #fff;
+        color: #ffffff;
         opacity: 0;
         transition: opacity 0.2s;
     }
@@ -200,6 +200,6 @@
     }
 
     &:hover::after {
-        color: #fff2;
+        color: #ffffff22;
     }
 }

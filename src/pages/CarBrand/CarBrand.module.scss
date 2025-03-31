@@ -5,7 +5,7 @@
     position: fixed;
     top: 90px;
     z-index: 10;
-    background: #fff;
+    background: #ffffff;
     height: 70px;
     width: 100%;
 }
@@ -17,7 +17,7 @@
     position: sticky;
     top: 130px;
     margin-bottom: 20px;
-    background: #fff;
+    background: #ffffff;
     padding-bottom: 5px;
     z-index: 10;
 
@@ -75,7 +75,7 @@
             rgb(255 255 255 / 100%) 0%,
             rgb(255 102 0 / 100%) 100%
         );
-        color: #fff;
+        color: #ffffff;
         opacity: 0;
         transition: opacity 0.2s ease-in-out;
     }

@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react'
 import { useUnit } from 'effector-react'
 
-import { Login } from 'widgets/AuthModal/ui/Login'
-import { Registration } from 'widgets/AuthModal/ui/Registration'
-
 import { $userStore, clearError } from 'units/user'
 
 import { clsnm } from 'shared/lib/classNames'
 import { Icon, Loader, Modal } from 'shared/ui'
 
+import { Login } from '../Login/Login'
+import { Registration } from '../Registration/Registration'
 import cls from './AuthModal.module.scss'
 
 export type TAuthType = 'login' | 'registration'
