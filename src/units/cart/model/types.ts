@@ -10,6 +10,10 @@ export interface ICartItem {
 
 export interface ICartSchema {
     products: ICartItem[]
+}
+export interface ICartStore extends ICartSchema {
     qty: number
     promoCode: string
+    isLoading: boolean
+    error: string
 }

@@ -2,16 +2,16 @@ import { createStore } from 'effector'
 
 import { priceFormatter } from 'shared/lib/priceFormatter'
 
-import { ICartItem, ICartSchema } from './types'
+import { ICartItem, ICartStore } from './types'
 
 const initialItems: ICartItem[] = [
     // {
-    //     id: 'MYX03D150M',
-    //     name: 'Штатный ксенон MYX D1S, 12V, 35W, 2шт.',
-    //     size: ['Металл', '6000K'],
-    //     price: 285000,
-    //     discount: 20,
-    //     qty: 1,
+    //     id: 'MYX0202301441',
+    //     name: 'Габариты MYX C5W 3014 12V 3W Canbus 2шт.',
+    //     size: 41,
+    //     price: 37800,
+    //     discount: -1,
+    //     qty: 2,
     //     isSelected: true,
     // },
     // {
@@ -25,10 +25,12 @@ const initialItems: ICartItem[] = [
     // },
 ]
 
-const cartState: ICartSchema = {
+const cartState: ICartStore = {
     products: initialItems,
     qty: initialItems.length,
     promoCode: '',
+    isLoading: true,
+    error: null,
 }
 
 export const $cart = createStore(cartState)
