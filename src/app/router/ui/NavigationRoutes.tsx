@@ -1,8 +1,10 @@
 import { Suspense } from 'react'
 import { Route } from 'react-router-dom'
 
+import { User } from 'pages/User'
 import { Cart } from 'pages/Cart'
 import { PageNotFound } from 'pages'
+
 import { Loader } from 'shared/ui'
 
 import { mainNavigationRoutes } from '../config/mainNavigation'
@@ -10,6 +12,8 @@ import { mainNavigationRoutes } from '../config/mainNavigation'
 export const NavigationRoutes = () => {
     return (
         <>
+            <Route path="user" element={<User />} />
+
             <Route
                 path="/cart"
                 element={
