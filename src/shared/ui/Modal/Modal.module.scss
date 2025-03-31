@@ -29,6 +29,12 @@
     transition: 0.25s ease-in-out;
     background: none !important;
 
+    &.content_bg {
+        background: var(--bg-color) !important;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
     &.bottom-top {
         top: 70px;
     }

@@ -12,6 +12,7 @@ const meta = {
         layout: 'centered',
     },
     args: {
+        contentBg: true,
         children:
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, laudantium saepe? Facere voluptatem, nihil voluptas, dignissimos veritatis ab dolorum corporis deleniti sint animi, architecto qui fuga voluptatum vel quaerat quo.',
     },
@@ -28,7 +29,11 @@ function WithButton(Story: StoryFn, context: StoryContext) {
     return (
         <>
             <Button onClick={() => setIsOpen(true)}>Show modal</Button>
-            <Story {...context} args={{ ...context.args, isOpen, onClose: () => setIsOpen(false) }} />
+            <Story
+                {...context}
+                args={{ ...context.args, isOpen, onClose: () => setIsOpen(false) }}
+                style={{ background: 'red' }}
+            />
         </>
     )
 }

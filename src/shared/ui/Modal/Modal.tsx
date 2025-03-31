@@ -13,9 +13,16 @@ interface ModalProps {
     isOpen: boolean
     onClose?: () => void
     openStyle?: OpenStyle
+    contentBg?: boolean
 }
 
-export const Modal = ({ children, isOpen, onClose, openStyle = 'opacity' }: PropsWithChildren<ModalProps>) => {
+export const Modal = ({
+    children,
+    isOpen,
+    onClose,
+    openStyle = 'opacity',
+    contentBg,
+}: PropsWithChildren<ModalProps>) => {
     const { theme } = useTheme()
 
     const closeByEscape = useCallback(
@@ -43,7 +50,7 @@ export const Modal = ({ children, isOpen, onClose, openStyle = 'opacity' }: Prop
                 <div onClick={onClose} className={cls.modal_overlay}>
                     <div
                         onClick={(e) => e.stopPropagation()}
-                        className={clsnm(cls.modal_content, ['App', cls[openStyle]], {})}
+                        className={clsnm(cls.modal_content, ['App', cls[openStyle]], { [cls.content_bg]: contentBg })}
                     >
                         {children}
                     </div>
