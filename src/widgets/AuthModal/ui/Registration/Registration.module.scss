@@ -1,0 +1,43 @@
+.Registration {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .title {
+        text-align: center;
+        margin: 5px 0;
+        text-transform: uppercase;
+    }
+
+    .login_form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 250px;
+        margin-top: 20px;
+
+        .submit_btn {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            margin-top: 10px;
+        }
+    }
+
+    .hint {
+        font-size: 14px;
+        color: #0000004a;
+        text-align: center;
+    }
+
+    .already_have_account {
+        margin-top: 15px;
+        font-size: 14px;
+        color: #00000089;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        text-decoration: underline;
+    }
+}

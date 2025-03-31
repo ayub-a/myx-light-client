@@ -1,0 +1,103 @@
+.AuthModal {
+    padding: 20px 25px;
+    position: relative;
+    background: var(--bg-color);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #00000039;
+    z-index: 10;
+}
+
+.hide {
+    pointer-events: none;
+}
+
+.auth_active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.auth_hide {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.auth_mode {
+    animation: waiting 0.5s infinite ease alternate;
+    color: var(--primary-color);
+    pointer-events: none;
+
+    @keyframes waiting {
+        0% {
+            opacity: 0.3;
+        }
+
+        100% {
+            opacity: 0.8;
+        }
+    }
+}
+
+.notification_popup {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    transition: 0.25s ease-in-out;
+    z-index: 0;
+    width: 100%;
+    opacity: 0;
+
+    &::before {
+        content: attr(data-msg);
+        width: calc(100% - 50px);
+        position: absolute;
+        padding: 15px 20px;
+        bottom: 3px;
+        left: 3px;
+        color: #dd2e2e;
+        border: 2px solid;
+        background: var(--bg-color);
+        border-radius: 10px;
+        font-weight: 450;
+    }
+
+    &::after {
+        content: attr(data-msg);
+        width: calc(100% - 40px);
+        position: absolute;
+        padding: 20px;
+        bottom: 0;
+        left: 0;
+        background: var(--bg-color);
+        border-radius: 12px;
+        font-weight: 450;
+        z-index: -1;
+    }
+
+    &.login::before {
+        border-color: #dd2e2e;
+        color: #dd2e2e;
+    }
+
+    &.registration::before {
+        border-color: #ff9d00;
+        color: #ff9d00;
+    }
+
+    &.show {
+        top: -15px;
+        opacity: 1;
+    }
+}
