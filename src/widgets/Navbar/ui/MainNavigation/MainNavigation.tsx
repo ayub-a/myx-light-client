@@ -1,38 +1,45 @@
+import { useLocation } from 'react-router-dom'
 import { useUnit } from 'effector-react'
 
 import { $cart } from 'units/cart'
 
-import { ButtonLink } from 'shared/ui/ButtonLink/ButtonLink'
 import { clsnm } from 'shared/lib/classNames'
-
-import cls from './MainNavigation.module.scss'
+import { ButtonLink } from 'shared/ui/ButtonLink/ButtonLink'
 import { Icon } from 'shared/ui'
 
+import { AuthOrUser } from '../AuthOrUser/AuthOrUser'
+import cls from './MainNavigation.module.scss'
+
 export const MainNavigation = () => {
-    const cart = useUnit($cart)
+    const location = useLocation()
+
+    const cartStore = useUnit($cart)
 
     return (
         <ul className={clsnm(cls.MainNavigation)}>
             <li>
-                <ButtonLink to="/" style="clear">
+                <ButtonLink to="/" style="clear" className={cls.nav_item}>
                     <Icon name="notification" size={25} />
                 </ButtonLink>
             </li>
             <li>
-                <ButtonLink to="/" style="clear">
+                <ButtonLink to="/" style="clear" className={cls.nav_item}>
                     <Icon name="favourites" size={25} />
                 </ButtonLink>
             </li>
             <li>
-                <ButtonLink to="/cart" style="clear">
-                    {cart.qty ? <span className={cls.cart_counter}>{cart.qty}</span> : null}
+                <ButtonLink
+                    to="/cart"
+                    style="clear"
+                    className={clsnm(cls.nav_item, [], { [cls.active]: location.pathname === '/cart' })}
+                >
+                    {cartStore.qty ? <span className={cls.cart_counter}>{cartStore.qty}</span> : null}
                     <Icon name="cart" size={25} />
                 </ButtonLink>
             </li>
+
             <li>
-                <ButtonLink to="/" style="clear">
-                    <Icon name="user" size={25} />
-                </ButtonLink>
+                <AuthOrUser className={clsnm(cls.nav_item, [], { [cls.active]: location.pathname === '/user' })} />
             </li>
         </ul>
     )
