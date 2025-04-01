@@ -24,20 +24,40 @@ export function buildLoaders({ isDev }: BuildConfig): RuleSetRule[] {
 
     const cssLoader = {
         test: /\.scss$/i,
+        exclude: /\.module\.scss/,
+        use: [
+            isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+            {
+                loader: 'css-loader',
+                options: {
+                    modules: false,
+                },
+            },
+            'sass-loader',
+        ],
+    }
+
+    const cssModuleLoader = {
+        test: /\.module\.scss/,
         use: [
             isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
             {
                 loader: 'css-loader',
                 options: {
                     modules: {
-                        auto: /\.module\.scss/,
+                        auto: true,
                         localIdentName: isDev ? '[path][name]__[local]--[hash:base64:5]' : '[hash:base64:5]',
                         namedExport: false,
                         exportLocalsConvention: 'dashes',
                     },
                 },
             },
-            'sass-loader',
+            {
+                loader: 'sass-loader',
+                options: {
+                    additionalData: '@use "app/styles/variables/break-points" as *;',
+                },
+            },
         ],
     }
 
@@ -55,5 +75,5 @@ export function buildLoaders({ isDev }: BuildConfig): RuleSetRule[] {
         exclude: /node_modules/,
     }
 
-    return [babelLoader, tsLoader, cssLoader, fileLoader, svgSpriteLoader]
+    return [babelLoader, tsLoader, cssLoader, cssModuleLoader, fileLoader, svgSpriteLoader]
 }
