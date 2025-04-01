@@ -4,11 +4,15 @@ import { clsnm } from 'shared/lib/classNames'
 import cls from './InfoNavigation.module.scss'
 import { useTranslation } from 'react-i18next'
 
-export const InfoNavigation = () => {
+interface IInfoNavigationProps {
+    className?: string
+}
+
+export const InfoNavigation = ({ className }: IInfoNavigationProps) => {
     const { t } = useTranslation()
 
     return (
-        <ul className={clsnm(cls.InfoNavigation)}>
+        <ul className={clsnm(cls.InfoNavigation, [className])}>
             <li>
                 <CustomLink to="/">{t('navbar.delivery')}</CustomLink>
             </li>

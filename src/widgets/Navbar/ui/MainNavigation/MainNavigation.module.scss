@@ -6,6 +6,10 @@
     width: fit-content;
     list-style: none;
 
+    @include media-laptop {
+        gap: 10px;
+    }
+
     li {
         position: relative;
 
@@ -16,8 +20,8 @@
             padding: 5px;
             cursor: pointer;
 
-            &:last-child {
-                padding-right: 0;
+            @include media-mobile {
+                padding: 0;
             }
         }
 
@@ -29,16 +33,20 @@
             position: absolute;
             top: -2px;
             right: -9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 22px;
+            width: 22px;
             color: #ffffff;
             font-size: 11px;
             background: var(--primary-color);
             border: 3px solid #ffffff;
             border-radius: 50px;
-            height: 22px;
-            width: 22px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        }
+
+        &:last-child {
+            padding-right: 0;
         }
     }
 

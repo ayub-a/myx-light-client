@@ -1,6 +1,9 @@
 .SearchInput {
-    width: 100%;
-    margin: 0 40px 0 15px;
+    width: 85%;
+
+    @include respond-between($bp-tablet-from, $bp-laptop-to) {
+        width: 100%;
+    }
 }
 
 .input {

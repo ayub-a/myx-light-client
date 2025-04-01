@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react'
 import { TestProvider } from 'shared/lib/test'
 import { Navbar } from './Navbar'
-import { Locale } from './Locale/Locale'
+import { Locale } from '../Locale/Locale'
 
 describe('Navbar', () => {
     test('Test render', () => {
