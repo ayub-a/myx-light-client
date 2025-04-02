@@ -131,6 +131,11 @@
             &:not(:first-child) {
                 display: none;
             }
+
+            svg {
+                width: 26px;
+                height: 100%;
+            }
         }
     }
 
@@ -151,14 +156,14 @@
     border-radius: 15px;
 
     svg {
-        width: 28px;
+        width: 26px;
         height: 100%;
     }
 
     @include media-mobile {
-        bottom: 20px;
+        bottom: 15px;
         display: block;
-        width: 90%;
+        width: calc(100% - 30px);
 
         ul {
             justify-content: space-between;

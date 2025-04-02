@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-import { Navbar } from 'widgets/Navbar/ui/Navbar'
+import { Navbar } from 'widgets/Navbar'
 import { clsnm } from 'shared/lib/classNames'
 
 import cls from './AppLayout.module.scss'
