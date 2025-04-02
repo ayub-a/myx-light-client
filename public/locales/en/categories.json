@@ -4,6 +4,9 @@
 		"ksenon": "Xenon lighting",
 		"gabariti": "Side lights",
 		"galogen": "Halogen lamps",
-		"led": "LED lamps"
+		"led-light": "LED lamps",
+		"led-linza": "LED lens",
+		"blok-rozhiga": "Ignition block",
+		"empty": "Test"
 	}
 }

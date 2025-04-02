@@ -31,17 +31,17 @@
     }
 
     .category_img {
-        transform: rotate(350deg);
         position: absolute;
         bottom: -85px;
         right: -60px;
         height: 240px;
+        transform: rotate(360deg);
         transition: transform 0.2s;
 
-        @include media-mobile {
+        @include respond-between($bp-mobile-from, $bp-tablet-to) {
             bottom: -40px;
-            right: -20px;
-            height: 160px;
+            right: -30px;
+            height: 85%;
         }
     }
 
@@ -49,12 +49,12 @@
         position: absolute;
         bottom: -35px;
         right: -35px;
-        height: 80%;
+        height: 240px;
 
-        @include media-mobile {
-            bottom: -50px;
+        @include respond-between($bp-mobile-from, $bp-tablet-to) {
+            bottom: -40px;
             right: -40px;
-            height: 160px;
+            height: 85%;
         }
     }
 
@@ -63,7 +63,7 @@
         border-color: #ffbf95;
 
         .category_img {
-            transform: rotate(350deg) scale(1.05);
+            transform: rotate(360deg) scale(1.05);
         }
     }
 
