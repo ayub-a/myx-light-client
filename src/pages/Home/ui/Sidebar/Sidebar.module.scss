@@ -1,3 +1,19 @@
+.sidebar_wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    @include media-mobile {
+        gap: 10px;
+    }
+
+    @include media-tablet {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
 .Sidebar {
     padding: 25px;
     background-color: var(--bg-secondary-color);
@@ -6,6 +22,12 @@
     display: flex;
     flex-direction: column;
     gap: 35px;
+    width: 100%;
+
+    @include respond-between($bp-mobile-from, $bp-tablet-to) {
+        padding: 15px;
+        gap: 15px;
+    }
 
     .title_wrap {
         display: flex;
@@ -14,10 +36,19 @@
 
         h3 {
             font: var(--font-l);
+            text-transform: uppercase;
+
+            @include respond-between($bp-mobile-from, $bp-tablet-to) {
+                font-weight: 500;
+            }
         }
 
         span {
             line-height: 21px !important;
+
+            @include respond-between($bp-mobile-from, $bp-tablet-to) {
+                display: none;
+            }
         }
     }
 
@@ -28,10 +59,44 @@
         color: var(--font-color) !important;
         border: 1px solid #bfbfbf !important;
         margin-bottom: 5px;
+
+        @include media-mobile {
+            height: 40px !important;
+        }
     }
 
     .notify_info {
         font-size: 14px;
         color: #0000005d;
+    }
+}
+
+.extra_block {
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #ffbf95;
+    color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background: var(--bg-color);
+
+    @include respond-between($bp-mobile-from, $bp-tablet-to) {
+        padding: 15px;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(156deg, rgba(255, 102, 0, 0.81) 10%, rgba(255, 255, 255, 1) 30%, rgba(253, 166, 107, 0.96) 54%, rgba(249, 234, 225, 0.94) 70%, rgba(255, 102, 0, 0.69) 90%);
+        opacity: 0.2;
     }
 }

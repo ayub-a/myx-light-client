@@ -7,7 +7,7 @@ import cls from './Sidebar.module.scss'
 
 export const Sidebar = () => {
     return (
-        <div>
+        <div className={cls.sidebar_wrap}>
             <div className={clsnm(cls.Sidebar)}>
                 <div className={cls.title_wrap}>
                     <h3>Search by car</h3>
@@ -22,6 +22,10 @@ export const Sidebar = () => {
 
                     <span className={cls.notify_info}>* car database is updated every day</span>
                 </div>
+            </div>
+
+            <div className={clsnm(cls.extra_block)}>
+                <span>Extra block for something usefull. Like AD.</span>
             </div>
         </div>
     )

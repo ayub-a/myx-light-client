@@ -23,6 +23,11 @@
         &::first-letter {
             text-transform: capitalize;
         }
+
+        @include media-mobile {
+            font-size: 18px;
+            font-weight: 500;
+        }
     }
 
     .category_img {
@@ -32,6 +37,12 @@
         right: -60px;
         height: 240px;
         transition: transform 0.2s;
+
+        @include media-mobile {
+            bottom: -40px;
+            right: -20px;
+            height: 160px;
+        }
     }
 
     .category_icon {
@@ -40,9 +51,10 @@
         right: -35px;
         height: 80%;
 
-        @media screen and (width <= 440px) {
-            bottom: -80px;
+        @include media-mobile {
+            bottom: -50px;
             right: -40px;
+            height: 160px;
         }
     }
 
@@ -75,7 +87,16 @@
         opacity: 1;
     }
 
-    @media screen and (width <= 440px) {
-        padding: 14px;
+    @include respond-between($bp-mobile-from, $bp-tablet-to) {
+        padding: 15px;
+
+        &:hover {
+            color: inherit;
+            border-color: #bfbfbf;
+        }
+
+        &:hover::before {
+            opacity: 0;
+        }
     }
 }
